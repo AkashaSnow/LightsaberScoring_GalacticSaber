@@ -1,1 +1,1 @@
-# LightsaberScoring_Galactic-Saber
+# LightsaberScoring_GalacticSaber
