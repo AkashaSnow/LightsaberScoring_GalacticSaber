@@ -4,11 +4,6 @@ def scoreTest():
     printScore(p1score, p2score)
 
     while True:        
-
-        exit = input("press x to exit, or Literally anthing else to continue")
-        if exit == "x":
-            break
-
         player = input("Which player scored? (1 or 2)")
         amount = int(input("How many points did they score"))
 
@@ -26,9 +21,11 @@ def scoreTest():
         #Returns player number if they win by getting over 15 points
         if p1score >= 15:
             print("player one wins!")
+            break
 
         if p2score >= 15:
             print("player two wins!")
+            break
 
 # Changes only player one or player two's score based on changeAmount, then returns the new score
 def changeScore(changeAmount, currentScore):
