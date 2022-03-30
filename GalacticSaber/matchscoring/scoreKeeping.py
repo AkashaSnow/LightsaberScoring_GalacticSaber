@@ -1,3 +1,4 @@
+#scorekeeping is currently disconnected from everything because idk how to connect it
 def scoreTest():
     p1score = 0
     p2score = 0
