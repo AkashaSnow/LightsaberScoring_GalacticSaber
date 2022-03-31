@@ -10,7 +10,7 @@
 
 /* Create five equal columns that floats next to each other */
 .column {
-  float: right;
+  float: left;
   width: 20%;
   height: 100%;
   padding: 10px;
@@ -18,6 +18,7 @@
 
 /* Clear floats after the columns */
 .row:after {
+  height: 600;
   content: "";
   display: table;
   clear: both;
@@ -29,25 +30,32 @@
 <h2>Match Scoring</h2>
 
 <div class="row">
-  <div class="column" style="background-color:rgb(5, 1, 1);">
-    <h2>Player One</h2>
+  <div class="column" style="background-color:rgb(5, 1, 1);
+  color:lavender">
+    <h2>Column 1</h2>
     <p>Some text..</p>
+    <button type="button" class="btn btn-primary">Primary</button>
   </div>
   <div class="column" style="background-color:#4D578E;">
     <h2>Column 2</h2>
     <p>Some text..</p>
+    <button type="button" class="btn btn-primary">Primary</button>
   </div>
   <div class="column" style="background-color:#ccc;">
     <h2>Column 3</h2>
     <p>Some text..</p>
+    <button type="button" class="btn btn-primary">Primary</button>
   </div>
   <div class="column" style="background-color:#ddd;">
     <h2>Column 4</h2>
     <p>Some text...</p>
+    <button type="button" class="btn btn-primary">Primary</button>
   </div>
-  <div class="column" style="background-color:rgb(12, 1, 1);">
+  <div class="column" style="background-color:rgb(12, 1, 1);
+  color:lavender">
     <h2>Column 5</h2>
     <p>Some text..</p>
+    <button type="button" class="btn btn-primary">Primary</button>
   </div>
 </div>
 
