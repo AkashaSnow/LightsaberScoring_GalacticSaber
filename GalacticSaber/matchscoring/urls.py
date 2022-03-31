@@ -2,7 +2,6 @@ from django.urls import path
 
 from . import views
 
-urlpatterns = [
-    path('', views.IndexView.as_view(), name='matchscoring'),
-]
+app_name = 'matchscoring'
+urlpatterns = [path('', views.ScoreView.as_view(), name='score'),]
 
