@@ -13,8 +13,4 @@ class ScoreView(generic.ListView):
     model = Score
     template_name = 'matchscoring/score.html'
 
-class IndexView(generic.DetailView):
-    model = Score
-    template_name = 'matchscoring/timer.py'
-    template_name = 'matchscoring/timer.html'
 
