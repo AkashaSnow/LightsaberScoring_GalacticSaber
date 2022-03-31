@@ -9,6 +9,6 @@ urlpatterns = [
 
 app_name = 'matchscoring'
 urlpatterns = [
-    path(views.IndexView.as_view(), name='timer'),
+    path(views.IndexView.as_view(), name='timer')
 ]
 
