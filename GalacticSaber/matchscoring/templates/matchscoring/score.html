@@ -1,63 +1,87 @@
-
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-* {
-  box-sizing: border-box;
-}
+  <title>Galactic Saber Match Scoring</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-/* Create five equal columns that floats next to each other */
-.column {
-  float: left;
-  width: 20%;
-  height: 100%;
-  padding: 10px;
-}
+    /* Create five equal columns that floats next to each other */
+    
+    .column {
+      float: left;
+      width: 18.75%;
+      height: 100%;
+      padding: 10px;
+      background-color: #4D578E;
+    }
 
-/* Clear floats after the columns */
-.row:after {
-  height: 600;
-  content: "";
-  display: table;
-  clear: both;
-}
-</style>
+    .scoreColumn {
+      float: left;
+      width: 18.75%;
+      height: 100%;
+      padding: 10px;
+      background-color: #000000;
+    }
+
+    .middleColumn {
+      float: left;
+      width: 25%;
+      height: 100%;
+      padding: 10px;
+    }
+
+    /* Clear floats after the columns */
+    .row:after {
+      height: 100%;
+      content: "";
+      display: table;
+      clear: both;
+    }
+  </style>
 </head>
 <body>
 
-<h2>Match Scoring</h2>
+  <div class="row">
+    <div class="scoreColumn" style="background-color:rgb(0, 0, 0);
+    color:lavender">
+      <h1 style="text-align: center; color: purple">00</h1>
+      <button type="button" class="btn btn-primary" style="height: 25%; width: 100%; ">Head or Torso</button>
+      <button type="button" class="btn btn-primary" style="height: 25%; width: 100%; ">Arms or Legs</button>
+      <button type="button" class="btn btn-primary" style="height: 25%; width: 100%; ">Hands or Hilt </button>
+      </div>
 
-<div class="row">
-  <div class="column" style="background-color:rgb(5, 1, 1);
-  color:lavender">
-    <h2>Column 1</h2>
-    <p>Some text..</p>
-    <button type="button" class="btn btn-primary">Primary</button>
+    <div class="column" style="background-color:#4D578E;">
+      <h2>Column 2</h2>
+      <p>Some text..</p>
+      <button type="button" class="btn btn-primary"> <img src="/static\matchscoring\images\buttonMinus.png" height=100% width=50%></button>
+      <button type="button" class="btn btn-primary"> <img src="/static\matchscoring\images\buttonPlus.png" height=100% width=50%></button>
+    </div>
+
+    <div class="middleColumn" style="background-color:#ccc;">
+      
+      <h2>Column 3</h2>
+      <p>Some text..</p>
+      <button type="button" class="btn btn-primary">Primary</button>
+      <img src="\static\matchscoring\images\GSLogo.png" height= 400px width = 100% alt="Poggers Redux Image">
+    </div>
+
+    <div class="column" style="background-color:#ddd;">
+      <h2>Column 4</h2>
+      <p>Some text...</p>
+      <button type="button" class="btn btn-primary">Primary</button>
+    </div>
+
+    <div class="scoreColumn" style="background-color:rgb(0, 0, 0);
+    color:lavender">
+      <h1 style="text-align: center; color: purple">00</h1>
+      <p>Some text..</p>
+      <button type="button" class="btn btn-primary">Primary</button>
+    </div>
   </div>
-  <div class="column" style="background-color:#4D578E;">
-    <h2>Column 2</h2>
-    <p>Some text..</p>
-    <button type="button" class="btn btn-primary">Primary</button>
-  </div>
-  <div class="column" style="background-color:#ccc;">
-    <h2>Column 3</h2>
-    <p>Some text..</p>
-    <button type="button" class="btn btn-primary">Primary</button>
-  </div>
-  <div class="column" style="background-color:#ddd;">
-    <h2>Column 4</h2>
-    <p>Some text...</p>
-    <button type="button" class="btn btn-primary">Primary</button>
-  </div>
-  <div class="column" style="background-color:rgb(12, 1, 1);
-  color:lavender">
-    <h2>Column 5</h2>
-    <p>Some text..</p>
-    <button type="button" class="btn btn-primary">Primary</button>
-  </div>
-</div>
 
 </body>
 </html>
