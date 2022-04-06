@@ -4,11 +4,9 @@ from . import views
 
 app_name = 'matchscoring'
 urlpatterns = [
-    path('', views.ScoreView.as_view(), name='score'),
+    path('score', views.ScoreView.as_view(), name='score'),
+    path('timer', views.timer), 
+
     ]
 
-app_name = 'matchscoring'
-urlpatterns = [
-    path(views.IndexView.as_view(), name='timer')
-]
 

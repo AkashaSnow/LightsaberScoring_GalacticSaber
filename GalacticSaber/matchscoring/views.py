@@ -13,4 +13,7 @@ class ScoreView(generic.ListView):
     model = Score
     template_name = 'matchscoring/score.html'
 
+def timer(request):
+    return render(request, 'matchscoring/timer.html')
+
 
