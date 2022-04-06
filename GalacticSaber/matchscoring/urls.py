@@ -7,8 +7,3 @@ urlpatterns = [
     path('', views.ScoreView.as_view(), name='score'),
     ]
 
-app_name = 'matchscoring'
-urlpatterns = [
-    path(views.IndexView.as_view(), name='timer')
-]
-
