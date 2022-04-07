@@ -1,3 +1,4 @@
+
 #Importing the time
 import time
 #The actual timer itself
