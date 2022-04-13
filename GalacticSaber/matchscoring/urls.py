@@ -6,7 +6,5 @@ from . import views
 app_name = 'matchscoring'
 urlpatterns = [
     path('', views.ScoreView.as_view(), name='score'),
-    path('timer', views.timer, name= 'timer'), 
-
+    path('timer', views.TimerView.as_view(), name='timer'), 
     ]
-

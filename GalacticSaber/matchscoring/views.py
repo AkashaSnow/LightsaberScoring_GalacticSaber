@@ -6,14 +6,16 @@ from django.views import generic
 
 from django.http import HttpResponse
 
-from .models import Score
+from .models import Score, Timer
 
 
 class ScoreView(generic.ListView):
     model = Score
     template_name = 'matchscoring/score.html'
 
-def timer(request):
-    return render(request, 'matchscoring/timer.html')
+class TimerView(generic.ListView):
+    model = Timer
+    templater_name = 'matchscoring/timer.html'
+    
 
 
