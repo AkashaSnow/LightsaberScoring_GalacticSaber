@@ -1,5 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <title></title>
 
-<p>You have: <span id="timer">null</span> 
-seconds remaining!</p>
-<script src="/static\timer.js"></script>
-<button id="playAgainButton" onclick="start()">Go!</button>
+</html>
+<body>
+    <h1 id="title">???</h1>
+    <p><button id="my-button">Start</button></p>
+
+</body>
+        <!--My JavaScript-->
+        <script>
+            var button = document.getElementByID("my_button");
+            var title = document.getElementById("title");
+            var time = 0;
+            var myInterval = -1;
+
+            button.addEventListener("click", function(event){
+                // if paused start
+                if (myInterval == -1) {
+                    button.innerHTML = "Pause";
+                    myInterval = setInterval(function(){
+                        time ++;
+                        title.innerHTML = timer;
+                    }, 1000);
+
+                } else {
+                    button.innerHTML = "Start";
+                    clearInterval(myInterval);
+                    myInterval = -1;
+                }
+
+            });
+
+
+        </script>
+</body>
+</html>
