@@ -5,19 +5,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Make Simple Javascript Timer</title>
-    <link rel="stylesheet" href="style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 <body>
   <center>
     <div id="timer">
-      <span id="mins">03:</span>
-      <span id="seconds">00</span>
+      <span><h1 id="mins">03:</h1></span>
+      <span><h1 id="seconds">00</h1></span>
     </div>
     <div id="controls">
     <button id="start" class="btn btn-primary"> <img src="/static\matchscoring\images\buttonPlay.png" alt="playButton"></button>
-    <button id="stop">Stop</button>
-    <button id="reset">Reset</button>
+    <button id="stop"type="button" class="btn btn-primary"> <img src="/static\matchscoring\images\buttonPause.png" alt="pauseButton"></button> 
+    <button id="reset">End</button>
     </div>
   </center>
   <script>
