@@ -1,5 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Make Simple Javascript Timer</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+  <center>
+    <div id="timer">
+      <span id="mins">03:</span>
+      <span id="seconds">00</span>
+    </div>
+    <div id="controls">
+    <button id="start" class="btn btn-primary"> <img src="/static\matchscoring\images\buttonPlay.png" alt="playButton"></button>
+    <button id="stop">Stop</button>
+    <button id="reset">Reset</button>
+    </div>
+  </center>
+  <script>
+var mins =3;
+var seconds =0;
+$('#start').click(function(){
+      startTimer();
+});
+$('#stop').click(function(){
+      clearTimeout(timex);
+});
+$('#reset').click(function(){
+          mins =3;      seconds =0;
+  $('#mins').html('03:');
+  $('#seconds').html('00');
+});
+function startTimer(){
+  timex = setTimeout(function(){
+      seconds--;
+    if(seconds < 0){seconds=59;mins--;
+       if(mins<0) {
+       mins=59;hours--;
+         if(hours <10) {$("#hours").text('0'+hours+':')} else $("#hours").text(hours+':');
+        }
+    if(mins<10){
+      $("#mins").text('0'+mins+':');}
+       else $("#mins").text(mins+':');
+                   }
+                   if(seconds <10) {
+      $("#seconds").text('0'+seconds);} else {
+      $("#seconds").text(seconds);
+      }
+      startTimer();
+  },200);
+}
 
-<p>You have: <span id="timer">null</span> 
-seconds remaining!</p>
-<script src="/static\timer.js"></script>
-<button id="playAgainButton" onclick="start()">Go!</button>
+  </script>
+</body>
+</html>
