@@ -15,6 +15,11 @@
       margin: 0;
       height: 10vh;
     }
+    .scoreButton {
+      background-color: #000000;
+      color: white;
+      border: 1px, solid, white;
+    }
     
     .column {
       float: left;
@@ -45,6 +50,11 @@
       display: table;
       clear: both;
     }
+    .imageMinus {
+      background-image: url("/static\matchscoring\images\buttonPlus.png");
+      background-size: 100px;
+    }
+
   </style>
 </head>
 <body>
@@ -52,17 +62,16 @@
   <div class="row">
     <div class="scoreColumn" style="background-color:rgb(0, 0, 0);
     color:lavender">
-      <container> </container>
-      <h1 style="text-align: center; font-family: Impact; font-size:72px; color: #7e3e98;">00</h1>
-      <button type="button" class="btn btn-primary" style="height: 25%; width: 100%; ">Head or Torso</button>
-      <button type="button" class="btn btn-primary" style="height: 25%; width: 100%; ">Arms or Legs</button>
-      <button type="button" class="btn btn-primary" style="height: 25%; width: 100%; ">Hands or Hilt </button>
+      <container height="25%"><h1 style="text-align: center; font-family: Impact; font-size: 6em; color: #7e3e98;">00</h1></container>
+      <button type="button" class="btn btn-primary scoreButton" style="height: 25%; width: 100%; ">Head or Torso</button>
+      <button type="button" class="btn btn-primary scoreButton" style="height: 25%; width: 100%; ">Arms or Legs</button>
+      <button type="button" class="btn btn-primary scoreButton" style="height: 25%; width: 100%; ">Hands or Hilt </button>
     </div>
 
     <div class="column" style="background-color:#4D578E;">
       <h2>Player One</h2>
 
-      <button type="button" class="btn btn-primary" style="height:10%; width:48%;"> <img src="/static\matchscoring\images\buttonMinus.png" alt="minus button"></button>
+      <button type="button" class="btn btn-primary" style="height:10%; width:48%;"></button>
       <button type="button" class="btn btn-primary" style="height:10%; width:48%;"> <img src="/static\matchscoring\images\buttonPlus.png" alt="plus button"></button>
       
       <!-- heres the foul code -->
@@ -92,9 +101,9 @@
     color:lavender">
       <h1 style="text-align: center; font-family: Impact; font-size:72px; color: #7e3e98;">00</h1>
 
-      <button type="button" class="btn btn-primary" style="height: 25%; width: 100%; ">Head or Torso</button>
-      <button type="button" class="btn btn-primary" style="height: 25%; width: 100%; ">Arms or Legs</button>
-      <button type="button" class="btn btn-primary" style="height: 25%; width: 100%; ">Hands or Hilt </button>
+      <button type="button" class="btn btn-primary scoreButton" style="height: 25%; width: 100%; ">Head or Torso</button>
+      <button type="button" class="btn btn-primary scoreButton" style="height: 25%; width: 100%; ">Arms or Legs</button>
+      <button type="button" class="btn btn-primary scoreButton" style="height: 25%; width: 100%; ">Hands or Hilt </button>
 
     </div>
   </div>
