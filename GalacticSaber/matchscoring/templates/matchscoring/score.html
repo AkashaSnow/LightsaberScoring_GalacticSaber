@@ -63,9 +63,9 @@
     <div class="scoreColumn" style="background-color:rgb(0, 0, 0);
     color:lavender">
       <container height="25%"><h1 id="p1score" style="text-align: center; font-family: Impact; font-size: 6em; color: #7e3e98;">00</h1></container>
-      <button type="button" onclick="p1PlusOne(5)" class="btn btn-primary scoreButton" style="height: 25%; width: 100%; ">Head or Torso</button>
-      <button type="button" onclick="p1PlusOne(3)" class="btn btn-primary scoreButton" style="height: 25%; width: 100%; ">Arms or Legs</button>
-      <button type="button" onclick="p1PlusOne(1)"class="btn btn-primary scoreButton" style="height: 25%; width: 100%; ">Hands or Hilt </button>
+      <button type="button" onclick="p1Plus(5)" class="btn btn-primary scoreButton" style="height: 25%; width: 100%; ">Head or Torso</button>
+      <button type="button" onclick="p1Plus(3)" class="btn btn-primary scoreButton" style="height: 25%; width: 100%; ">Arms or Legs</button>
+      <button type="button" onclick="p1Plus(1)"class="btn btn-primary scoreButton" style="height: 25%; width: 100%; ">Hands or Hilt </button>
     </div>
 
     <div class="column" style="background-color:#4D578E;">
@@ -75,8 +75,6 @@
       <button type="button" class="btn btn-primary" style="height:10%; width:48%;"> <img src="/static\matchscoring\images\buttonPlus.png" alt="plus button"></button>
       
       <!-- heres the foul code -->
-<<<<<<< HEAD
-=======
       <div class="dropup" style=" width:100%; top: 10px;">
         <div class="panel" data-toggle="collapse" href="#collapse1" style="background-color:#7e3e98;">
           <div class="panel-heading">
@@ -94,7 +92,6 @@
           </div>
         </div>
       </div>
->>>>>>> c866b908d279dead1f19694b6d2f79c47922ad24
       
     </div>
     
@@ -121,9 +118,9 @@
     color:lavender">
       <h1 id="p2score" style="text-align: center; font-family: Impact; font-size:72px; color: #7e3e98;">00</h1>
 
-      <button type="button" class="btn btn-primary scoreButton" style="height: 25%; width: 100%; ">Head or Torso</button>
-      <button type="button" class="btn btn-primary scoreButton" style="height: 25%; width: 100%; ">Arms or Legs</button>
-      <button type="button" class="btn btn-primary scoreButton" style="height: 25%; width: 100%; ">Hands or Hilt </button>
+      <button type="button" onclick="p2Plus(5)" class="btn btn-primary scoreButton" style="height: 25%; width: 100%; ">Head or Torso</button>
+      <button type="button" onclick="p2Plus(3)" class="btn btn-primary scoreButton" style="height: 25%; width: 100%; ">Arms or Legs</button>
+      <button type="button" onclick="p2Plus(1)" class="btn btn-primary scoreButton" style="height: 25%; width: 100%; ">Hands or Hilt </button>
 
     </div>
   </div>
@@ -131,11 +128,14 @@
   <script>
     var playerOneScore=00
     var playerTwoScore=00
-    function p1PlusOne(amount) {
+    function p1Plus(amount) {
         playerOneScore+= amount;
         document.getElementById('p1score').innerHTML= playerOneScore;
     }
-    
+    function p2Plus(amount) {
+        playerTwoScore+= amount;
+        document.getElementById('p2score').innerHTML= playerTwoScore;
+    }
 
   </script>
   
