@@ -30,8 +30,8 @@ $('#stop').click(function(){
       clearTimeout(timex);
 });
 $('#reset').click(function(){
-      hours =0;      mins =3;      seconds =0;
-  $('#hours','#mins').html('00:');
+          mins =3;      seconds =0;
+  $('#mins').html('03:');
   $('#seconds').html('00');
 });
 function startTimer(){
@@ -51,7 +51,7 @@ function startTimer(){
       $("#seconds").text(seconds);
       }
       startTimer();
-  },1000);
+  },200);
 }
 
   </script>
