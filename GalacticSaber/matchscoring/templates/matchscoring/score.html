@@ -71,18 +71,18 @@
     <div class="column" style="background-color:#4D578E;">
       <h2>Player One</h2>
 
-      <button type="button" class="btn btn-primary" style="height:10%; width:48%;"></button>
-      <button type="button" class="btn btn-primary" style="height:10%; width:48%;"> <img src="/static\matchscoring\images\buttonPlus.png" alt="plus button"></button>
+      <button type="button" onclick="p1Plus(-1)" class="btn btn-primary" style="height:10%; width:48%;"></button>
+      <button type="button" onclick="p1Plus(1)" class="btn btn-primary" style="height:10%; width:48%;"> <img src="/static\matchscoring\images\buttonPlus.png" alt="plus button"></button>
       
       <!-- heres the foul code -->
       <div class="dropup" style=" width:100%; top: 10px;">
-        <div class="panel" data-toggle="collapse" href="#collapse1" style="background-color:#7e3e98;">
+        <div class="panel" data-toggle="collapse" href="#collapse2" style="background-color:#7e3e98;">
           <div class="panel-heading">
             <h4 class="panel-title" style="text-align: center;">
               <p class="text" style="font-family: Comic Sans MS; color: black;">Fouls</p>
             </h4>
           </div>
-          <div id="collapse1" class="panel-collapse collapse">
+          <div id="collapse2" class="panel-collapse collapse">
             <ul class="list-group">
               <a href="#" class="list-group-item" style="background-color: white; height:14vh;"></a>
               <a href="#" class="list-group-item" style="background-color: yellow; height:14vh;"></a>
@@ -105,13 +105,30 @@
       
     </div>
 
-    <div class="column" style="background-color:#ddd;">
+    <div class="column" style="background-color:#4D578E;">
       <h2>Player Two</h2>
 
-      <button type="button" class="btn btn-primary"style="height:10%; width:48%;"> <img src="/static\matchscoring\images\buttonPlus.png" alt="playButton"></button>
-      <button type="button" class="btn btn-primary"style="height:10%; width:48%;"> <img src="/static\matchscoring\images\buttonMinus.png" alt="pauseButton"></button>
+      <button type="button" onclick="p2Plus(1)" class="btn btn-primary"style="height:10%; width:48%;"> <img src="/static\matchscoring\images\buttonPlus.png" alt="playButton"></button>
+      <button type="button" onclick="p2Plus(-1)" class="btn btn-primary"style="height:10%; width:48%;"> <img src="/static\matchscoring\images\buttonMinus.png" alt="pauseButton"></button>
       
       <!-- heres the foul code -->
+      <div class="dropup" style=" width:100%; top: 10px;">
+        <div class="panel" data-toggle="collapse" href="#collapse1" style="background-color:#7e3e98;">
+          <div class="panel-heading">
+            <h4 class="panel-title" style="text-align: center;">
+              <p class="text" style="font-family: Comic Sans MS; color: black;">Fouls</p>
+            </h4>
+          </div>
+          <div id="collapse1" class="panel-collapse collapse">
+            <ul class="list-group">
+              <a href="#" class="list-group-item" style="background-color: white; height:14vh;"></a>
+              <a href="#" class="list-group-item" style="background-color: yellow; height:14vh;"></a>
+              <a href="#" class="list-group-item" style="background-color: red; height:14vh;"></a>
+              <a href="#" class="list-group-item" style="background-color: black; height:14vh;"></a>
+            </ul>
+          </div>
+        </div>
+      </div>
     </div>
     
     <div class="scoreColumn" style="background-color:rgb(0, 0, 0);
@@ -126,6 +143,7 @@
   </div>
 
   <script>
+    // Start of ScoreKeeping Code
     var playerOneScore=00
     var playerTwoScore=00
     function p1Plus(amount) {
@@ -136,6 +154,9 @@
         playerTwoScore+= amount;
         document.getElementById('p2score').innerHTML= playerTwoScore;
     }
+    // End of Scorkeeping Code
+
+    // filler space for timer code hehe
 
   </script>
   
