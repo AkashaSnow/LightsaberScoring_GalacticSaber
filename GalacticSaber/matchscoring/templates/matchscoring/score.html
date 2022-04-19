@@ -69,8 +69,7 @@
     </div>
 
     <div class="column" style="background-color:#4D578E;">
-      <h2 style="font-family: Comic Sans MS; font-size: 183%;">Player One</h2>
-
+      <h2 style="font-family: Comic Sans MS; font-size: 3.5vw; position: absolute;">Player One</h2>
       <button type="button" onclick="p1Plus(-1)" class="btn btn-primary" style="height:10%; width:48%;"></button>
       <button type="button" onclick="p1Plus(1)" class="btn btn-primary" style="height:10%; width:48%;"> <img src="/static\matchscoring\images\buttonPlus.png" alt="plus button"></button>
       
@@ -107,7 +106,7 @@
     </div>
 
     <div class="column" style="background-color:#4D578E;">
-      <h2 style="font-family: Comic Sans MS; font-size: 183%;">Player Two</h2>
+      <h2 style="font-family: Comic Sans MS; font-size: 3.5vw; position: absolute;">Player Two</h2>
 
       <button type="button" onclick="p2Plus(1)" class="btn btn-primary"style="height:10%; width:48%;"> <img src="/static\matchscoring\images\buttonPlus.png" alt="playButton"></button>
       <button type="button" onclick="p2Plus(-1)" class="btn btn-primary"style="height:10%; width:48%;"> <img src="/static\matchscoring\images\buttonMinus.png" alt="pauseButton"></button>
@@ -144,6 +143,12 @@
   </div>
 
   <script>
+    var fontize = $("#title").css("font-size");
+    var i = 0/*remove unit from integer*/
+    while($("#container").find("span").width() > $("#container").width()) {
+    var currentFontSize = parseInt($("#container").find("span").css("font-size")); 
+    $("#container").find("span").css("font-size",currentFontSize-1); 
+    }
     // Start of ScoreKeeping Code
     var playerOneScore=00
     var playerTwoScore=00
