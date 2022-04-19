@@ -154,6 +154,14 @@
         playerTwoScore+= amount;
         document.getElementById('p2score').innerHTML= playerTwoScore;
     }
+    function winCheck() {
+      if (playerOneScore >= 15) {
+        alert("Player One Wins!")
+      }
+      if (playerTwoScore >= 15) {
+        alert("Player Two Wins")
+      }
+    }
     // End of ScoreKeeping Code
 
     // filler space for timer code hehe
