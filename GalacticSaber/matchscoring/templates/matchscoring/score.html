@@ -75,8 +75,14 @@
 
     <div class="column" style="background-color:#4D578E;">
       <h2 style="font-family: Comic Sans MS; font-size: 3.5vw; position: absolute;">Player One</h2>
+<<<<<<< HEAD
       <button type="button" onclick="p1Plus(-1)" class="btn btn-primary imageMinus" style="height:10%; width:48%;"></button>
       <button type="button" onclick="p1Plus(1)" class="btn btn-primary" style="height:10%; width:48%;" > </button>
+=======
+      <button type="button" onclick="p1Plus(-1)" class="btn btn-primary" style="height:10%; width:48%;"></button>
+      <button type="button" onclick="p1Plus(1)" class="btn btn-primary" style="height:10%; width:48%;"> <img src="/static\matchscoring\images\buttonPlus.png" alt="plus button"></button>
+      <!-- <input style="background-size: contain;" type="image" src="/static\matchscoring\images\buttonPlus.png"  name="p1Plus" onclick="p1Plus(1)" class="btn btn-primary" id="plus button" /> -->
+>>>>>>> f8564365d11000d973b718652799a4d4853c143a
       
       <!-- heres the foul code -->
       <div class="dropup" style=" width:100%; top: 10px;">
@@ -113,7 +119,14 @@
 
       <img src="\static\matchscoring\images\GSLogo.png" height=100vw width = 100% alt="Poggers Redux Image">
       <h1 id="SuddenDeath" style="font-family: Impact; font-size: 4em; color: red; text-align: center; visibility: hidden; position: absolute;">SUDDEN  <br> DEATH</h1>
+<<<<<<< HEAD
       <button type="reset" id="reset" class="btn btn-primary" >End</button>
+=======
+<<<<<<< HEAD
+=======
+      <button type="reset" class="btn btn-primary" style="font-family:Impact; background-color: #666666ff;">End</button>
+>>>>>>> 61fa203555b7a48138cbdf1e202c3179386234d8
+>>>>>>> f8564365d11000d973b718652799a4d4853c143a
     
 
     </div>
@@ -238,6 +251,20 @@
         startTimer();
     },1000);
   }
+    if(mins<10){
+      $("#mins").text('0'+mins+':');}
+       else $("#mins").text(mins+':');
+                   }
+                   if(seconds <10) {
+      $("#seconds").text('0'+seconds);} else {
+      $("#seconds").text(seconds);
+      }
+    if(mins =0)(seconds =0)
+      $('stop')
+      
+      startTimer();
+  },1000);
+}
   </script>
   
 </body>
