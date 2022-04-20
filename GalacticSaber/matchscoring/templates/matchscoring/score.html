@@ -164,9 +164,40 @@
       }
     }
     // End of ScoreKeeping Code
+    // filler space for timer code
 
-    // filler space for timer code hehe
-
+    var mins =3;
+var seconds =0;
+$('#start').click(function(){
+      startTimer();
+});
+$('#stop').click(function(){
+      clearTimeout(timex);
+});
+$('#reset').click(function(){
+          mins =3;      seconds =0;
+  $('#mins').html('03:');
+  $('#seconds').html('00');
+});
+function startTimer(){
+  timex = setTimeout(function(){
+      seconds--;
+    if(seconds < 0){seconds=59;mins--;
+       if(mins<0) {
+       mins=59;hours--;
+         if(hours <10) {$("#hours").text('0'+hours+':')} else $("#hours").text(hours+':');
+        }
+    if(mins<10){
+      $("#mins").text('0'+mins+':');}
+       else $("#mins").text(mins+':');
+                   }
+                   if(seconds <10) {
+      $("#seconds").text('0'+seconds);} else {
+      $("#seconds").text(seconds);
+      }
+      startTimer();
+  },1000);
+}
   </script>
   
 </body>
