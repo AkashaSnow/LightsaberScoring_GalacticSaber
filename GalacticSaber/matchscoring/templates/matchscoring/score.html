@@ -99,8 +99,8 @@
       <button type="button" class="btn btn-primary"> <img src="/static\matchscoring\images\buttonPause.png" alt="pauseButton"></button>
       
       <img src="\static\matchscoring\images\GSLogo.png" height=100vw width = 100% alt="Poggers Redux Image">
-      
-      <button type="reset" class="btn btn-primary"> <img src="/static\matchscoring\images\image.png" alt="endButton"></button>
+      <h1 id="SuddenDeath" style="font-size: 5em;">Sudden  <br> Death</h1>
+      <button type="reset" class="btn btn-primary">End</button>
     
 
     </div>
@@ -155,10 +155,12 @@
     function p1Plus(amount) {
         playerOneScore+= amount;
         document.getElementById('p1score').innerHTML= playerOneScore;
+        suddenDeathCheck()
     }
     function p2Plus(amount) {
         playerTwoScore+= amount;
         document.getElementById('p2score').innerHTML= playerTwoScore;
+        suddenDeathCheck()
     }
     function winCheck() {
       if (playerOneScore >= 15) {
@@ -168,6 +170,13 @@
         alert("Player Two Wins")
       }
     }
+    function suddenDeathCheck() {
+        if ((playerOneScore >= 10) && (playerTwoScore >= 10)) {
+          alert("Sudden Death")
+        }
+    }
+
+
     // End of ScoreKeeping Code
 
     // filler space for timer code hehe
