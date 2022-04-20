@@ -51,8 +51,13 @@
       clear: both;
     }
     .imageMinus {
-      background-image: url();
-      background-size: contain;
+      position: absolute;
+      bottom: 10px;
+      /* background-image: url("/static\matchscoring\images\buttonPause.png"); */
+      /* background-repeat: no-repeat; */
+      background-size: 100vw;
+      alt: "-";
+      background:url(../static\matchscoring\images\buttonMinus.png) no-repeat;
     }
 
   </style>
@@ -70,8 +75,8 @@
 
     <div class="column" style="background-color:#4D578E;">
       <h2 style="font-family: Comic Sans MS; font-size: 3.5vw; position: absolute;">Player One</h2>
-      <button type="button" onclick="p1Plus(-1)" class="btn btn-primary" style="height:10%; width:48%;"></button>
-      <button type="button" onclick="p1Plus(1)" class="btn btn-primary" style="height:10%; width:48%;"> <img src="/static\matchscoring\images\buttonPlus.png" alt="plus button"></button>
+      <button type="button" onclick="p1Plus(-1)" class="btn btn-primary imageMinus" style="height:10%; width:48%;"></button>
+      <button type="button" onclick="p1Plus(1)" class="btn btn-primary" style="height:10%; width:48%;" > </button>
       
       <!-- heres the foul code -->
       <div class="dropup" style=" width:100%; top: 10px;">
@@ -104,12 +109,11 @@
         <div id="controls">
         <button id="start" class="btn btn-primary"> <img src="/static\matchscoring\images\buttonPlay.png" alt="playButton"></button>
         <button id="stop" type="button" class="btn btn-primary"> <img src="/static\matchscoring\images\buttonPause.png" alt="pauseButton"></button> 
-        <button id="reset">End</button>
         </div>
 
       <img src="\static\matchscoring\images\GSLogo.png" height=100vw width = 100% alt="Poggers Redux Image">
       <h1 id="SuddenDeath" style="font-family: Impact; font-size: 4em; color: red; text-align: center; visibility: hidden; position: absolute;">SUDDEN  <br> DEATH</h1>
-      <button type="reset" class="btn btn-primary">End</button>
+      <button type="reset" id="reset" class="btn btn-primary" >End</button>
     
 
     </div>
@@ -182,46 +186,58 @@
     }
     function suddenDeathCheck() {
         if ((playerOneScore >= 10) && (playerTwoScore >= 10)) {
-          alert("Sudden Death")
+          
         }
+    }
+    function alertFun() {
+      alert("Yippee!")
     }
 
 
     // End of ScoreKeeping Code
-    // filler space for timer code
+ 
+    // Timer Code
+  var mins =3;
+  var seconds =0;
+  $('#start').click(function(){
+        startTimer();
+  });
+  $('#stop').click(function(){
+        clearTimeout(timex);
+  });
 
-    var mins =3;
-var seconds =0;
-$('#start').click(function(){
-      startTimer();
-});
-$('#stop').click(function(){
+  $('#reset').click(function(){
+
       clearTimeout(timex);
-});
-$('#reset').click(function(){
-          mins =3;      seconds =0;
-  $('#mins').html('03:');
-  $('#seconds').html('00');
-});
-function startTimer(){
-  timex = setTimeout(function(){
+      mins =3;      
+      seconds =0;
+      playerOneScore = 0;
+      playerTwoScore = 0;
+
+
+    $('#mins').html('03:');
+    $('#seconds').html('00');
+  });
+
+  function startTimer(){
+    timex = setTimeout(function(){
       seconds--;
-    if(seconds < 0){seconds=59;mins--;
-       if(mins<0) {
-       mins=59;hours--;
-         if(hours <10) {$("#hours").text('0'+hours+':')} else $("#hours").text(hours+':');
+      if(seconds < 0){seconds=59;mins--;
+        if(mins<0) {
+        mins=59;hours--;
+          if(hours <10) {$("#hours").text('0'+hours+':')} else $("#hours").text(hours+':');
+          }
+      if(mins<10){
+        $("#mins").text('0'+mins+':');}
+        else $("#mins").text(mins+':');
+                    }
+                    if(seconds <10) {
+        $("#seconds").text('0'+seconds);} else {
+        $("#seconds").text(seconds);
         }
-    if(mins<10){
-      $("#mins").text('0'+mins+':');}
-       else $("#mins").text(mins+':');
-                   }
-                   if(seconds <10) {
-      $("#seconds").text('0'+seconds);} else {
-      $("#seconds").text(seconds);
-      }
-      startTimer();
-  },1000);
-}
+        startTimer();
+    },1000);
+  }
   </script>
   
 </body>
