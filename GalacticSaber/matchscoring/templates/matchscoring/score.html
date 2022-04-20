@@ -97,6 +97,15 @@
     <div class="middleColumn" style="background-color:#212c68;">
 
       <!-- Timer Code Goes Here -->
+        <div style="position: absolute;">
+          <span><h3 id="mins">03:</h3></span>
+          <span><h3 id="seconds">00</h3></span>
+        </div>
+        <div id="controls">
+        <button id="start" class="btn btn-primary"> <img src="/static\matchscoring\images\buttonPlay.png" alt="playButton"></button>
+        <button id="stop" type="button" class="btn btn-primary"> <img src="/static\matchscoring\images\buttonPause.png" alt="pauseButton"></button> 
+        <button id="reset">End</button>
+        </div>
 
       <img src="\static\matchscoring\images\GSLogo.png" height=100vw width = 100% alt="Poggers Redux Image">
       <h1 id="SuddenDeath" style="font-size: 5em; text-align: center;">Sudden  <br> Death</h1>
@@ -149,6 +158,7 @@
     var currentFontSize = parseInt($("#container").find("span").css("font-size")); 
     $("#container").find("span").css("font-size",currentFontSize-1); 
     }
+
     // Start of ScoreKeeping Code
     var playerOneScore=00
     var playerTwoScore=00
