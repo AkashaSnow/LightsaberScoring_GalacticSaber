@@ -214,6 +214,9 @@
 
     $('#mins').html('03:');
     $('#seconds').html('00');
+    $('#p1score').html('00');
+    $('#p2score').html('00');
+
   });
 
   function startTimer(){
@@ -221,7 +224,11 @@
       seconds--;
       if(seconds < 0){seconds=59;mins--;
         if(mins<0) {
-        mins=59;hours--;
+        mins=0;hours--;
+        clearTimeout(timex);
+        clearTimeout(timex);
+        clearTimeout(timex);
+
           if(hours <10) {$("#hours").text('0'+hours+':')} else $("#hours").text(hours+':');
           }
       if(mins<10){
@@ -235,6 +242,7 @@
         startTimer();
     },1000);
   }
+
   </script>
   
 </body>
