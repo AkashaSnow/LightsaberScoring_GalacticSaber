@@ -207,13 +207,7 @@
   });
 
   $('#stop').click(function(){
-<<<<<<< HEAD
-    clearTimeout(timex);
-    clearTimeout(timex);
-    clearTimeout(timex);
-=======
         clearTimeout(timex);
->>>>>>> 1710319f34ae483bcfcd2c46d10db8a02ee768f7
   });
   
   $('#reset').click(function(){
@@ -240,23 +234,30 @@
     
     timex = setTimeout(function(){
       seconds--;
-      if(seconds < 0){seconds=59;mins--;
+      if(seconds < 0) {
+        seconds=59;
+        mins--;
         if(mins<0) {
-        mins=0;hours--;
-        clearTimeout(timex);
-        clearTimeout(timex);
-        clearTimeout(timex);
-        clearInterval(nowtime);
-          }
-      if(mins<10){
-        $("#mins").text('0'+mins+':');}
-        else $("#mins").text(mins+':');
-                    }
-                    if(seconds <10) {
-        $("#seconds").text('0'+seconds);} else {
-        $("#seconds").text(seconds);
+          mins=0;hours--;
+          clearTimeout(timex);
+          clearTimeout(timex);
+          clearTimeout(timex);
+          clearInterval(nowtime);
         }
-        startTimer();
+        if(mins<10) {
+          $("#mins").text('0'+mins+':');
+        }
+        else {
+          $("#mins").text(mins+':');
+        }
+      }
+      if(seconds <10) {
+        $("#seconds").text('0'+seconds);
+      } 
+      else {
+        $("#seconds").text(seconds);
+      }
+        // startTimer();
     },1000);
   }
 
