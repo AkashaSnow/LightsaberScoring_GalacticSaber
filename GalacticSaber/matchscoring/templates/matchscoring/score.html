@@ -98,9 +98,9 @@
     <div class="middleColumn" style="background-color:#212c68;">
 
       <!-- Timer Code Goes Here -->
-        <div style="position: absolute; top: 0px">
-          <span><h3 id="mins">03:</h3></span>
-          <span><h3 id="seconds">00</h3></span>
+        <div style="margin-left: -.65vw; margin-right: 0px; width: 24%; height:40vh; background-color: #000000; position: absolute; top: 0px">
+          <span><h3 id="mins" style="border-style: solid; font-family: Impact; font-size: 4em; color:#7e3e98; text-align: center;">03:</h3></span>
+          <span><h3 id="seconds" style="font-family: Impact; font-size: 4em; color:#7e3e98; text-align: center;">00</h3></span>
         </div>
         <div id="controls">
         <button id="start" class="btn btn-primary"> <img src="/static\matchscoring\images\buttonPlay.png" alt="playButton"></button>
@@ -207,13 +207,7 @@
   });
 
   $('#stop').click(function(){
-<<<<<<< HEAD
-    clearTimeout(timex);
-    clearTimeout(timex);
-    clearTimeout(timex);
-=======
         clearTimeout(timex);
->>>>>>> 1710319f34ae483bcfcd2c46d10db8a02ee768f7
   });
   
   $('#reset').click(function(){
@@ -240,21 +234,29 @@
     
     timex = setTimeout(function(){
       seconds--;
-      if(seconds < 0){seconds=59;mins--;
+      if(seconds < 0) {
+        seconds=59;
+        mins--;
         if(mins<0) {
-        mins=0;hours--;
-        clearTimeout(timex);
-        clearTimeout(timex);
-        clearTimeout(timex);
-          }
-      if(mins<10){
-        $("#mins").text('0'+mins+':');}
-        else $("#mins").text(mins+':');
-                    }
-                    if(seconds <10) {
-        $("#seconds").text('0'+seconds);} else {
-        $("#seconds").text(seconds);
+          mins=0;hours--;
+          clearTimeout(timex);
+          clearTimeout(timex);
+          clearTimeout(timex);
+          clearInterval(nowtime);
         }
+        if(mins<10) {
+          $("#mins").text('0'+mins+':');
+        }
+        else {
+          $("#mins").text(mins+':');
+        }
+      }
+      if(seconds <10) {
+        $("#seconds").text('0'+seconds);
+      } 
+      else {
+        $("#seconds").text(seconds);
+      }
         startTimer();
     },1000);
   }
