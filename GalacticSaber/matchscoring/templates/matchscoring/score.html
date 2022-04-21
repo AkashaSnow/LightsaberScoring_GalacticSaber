@@ -99,9 +99,9 @@
     <div class="middleColumn" style="background-color:#212c68;">
 
       <!-- Timer Code Goes Here -->
-        <div style="position: absolute; top: 0px">
-          <span><h3 id="mins">03:</h3></span>
-          <span><h3 id="seconds">00</h3></span>
+        <div style="margin-left: -.65vw; margin-right: 0px; width: 24%; height:40vh; background-color: #000000; position: absolute; top: 0px">
+          <span><h3 id="mins" style="border-style: solid; font-family: Impact; font-size: 4em; color:#7e3e98; text-align: center;">03:</h3></span>
+          <span><h3 id="seconds" style="font-family: Impact; font-size: 4em; color:#7e3e98; text-align: center;">00</h3></span>
         </div>
         <div id="controls">
         <button id="start" class="btn btn-primary"> <img src="/static\matchscoring\images\buttonPlay.png" alt="playButton"></button>
@@ -228,6 +228,7 @@
         clearTimeout(timex);
         clearTimeout(timex);
         clearTimeout(timex);
+        clearInterval(nowtime);
           }
       if(mins<10){
         $("#mins").text('0'+mins+':');}
