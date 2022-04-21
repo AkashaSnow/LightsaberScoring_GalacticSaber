@@ -43,7 +43,6 @@
       height: 100vh;
       padding: 10px;
     }
-
     /* Clear floats after the columns */
     .row {
       height: 100%;
@@ -65,12 +64,12 @@
     <div class="scoreColumn" style="background-color:rgb(0, 0, 0);
     color:lavender">
       <container height="25%"><h1 id="p1score" style="text-align: center; font-family: Impact; font-size: 4em; color: #7e3e98;">00</h1></container>
-      <button type="button" id="p15" onclick="p1Plus(5)" class="btn btn-primary scoreButton" style="height: 25%; width: 100%; ">Head or Torso</button>
-      <button type="button" id="p13" onclick="p1Plus(3)" class="btn btn-primary scoreButton" style="height: 25%; width: 100%; ">Arms or Legs</button>
-      <button type="button" id="p11" onclick="p1Plus(1)"class="btn btn-primary scoreButton" style="height: 25%; width: 100%;">Hands or Hilt </button>
+      <button type="button" onclick="p1Plus(5)" class="btn btn-primary scoreButton" style="height: 25%; width: 100%; ">Head or Torso</button>
+      <button type="button" onclick="p1Plus(3)" class="btn btn-primary scoreButton" style="height: 25%; width: 100%; ">Arms or Legs</button>
+      <button type="button" onclick="p1Plus(1)"class="btn btn-primary scoreButton" style="height: 25%; width: 100%;">Hands or Hilt </button>
     </div>
 
-    <div class="column" id="column" style="background-color:#4D578E;">
+    <div class="column" style="background-color:#4D578E;">
       <h2 style="font-family: Comic Sans MS; font-size: 3.5vw; position: absolute;">Player One</h2>
       <button type="button" onclick="p1Plus(-1)" class="btn btn-primary imageMinus" style="height:10%; width:48%;"></button>
       <button type="button" onclick="p1Plus(1)" class="btn btn-primary" style="height:10%; width:48%;" > </button>
@@ -96,26 +95,26 @@
       
     </div>
     
-    <div class="middleColumn" id="middleColumn" style="background-color:#212c68;">
+    <div class="middleColumn" style="background-color:#212c68;">
 
       <!-- Timer Code Goes Here -->
-        <div style="margin-left: -.65vw; margin-right: 0px; width: 25%; height:20vh; background-color: #000000; position: absolute; top: 0px">
+        <div style="margin-left: -.65vw; margin-right: 0px; width: 24%; height:40vh; background-color: #000000; position: absolute; top: 0px">
           <span><h3 id="mins" style="border-style: solid; font-family: Impact; font-size: 4em; color:#7e3e98; text-align: center;">03:</h3></span>
           <span><h3 id="seconds" style="font-family: Impact; font-size: 4em; color:#7e3e98; text-align: center;">00</h3></span>
         </div>
-        <div style="margin-left: -65.vw; margin-left: 0xp; width: 15%; height: 10px;">
+        <div id="controls">
         <button id="start" class="btn btn-primary"> <img src="/static\matchscoring\images\buttonPlay.png" alt="playButton"></button>
         <button id="stop" type="button" class="btn btn-primary"> <img src="/static\matchscoring\images\buttonPause.png" alt="pauseButton"></button> 
         </div>
 
-      <img src="\static\matchscoring\images\GSLogo.png" height=100vw width = 100% alt="Poggers Redux Image" id="gsLogo">
-      <h1 id="SuddenDeath" style="font-family: Impact; font-size: 4em; color: red; text-align: center; display:none; position: absolute;">SUDDEN  <br> DEATH</h1>
+      <img src="\static\matchscoring\images\GSLogo.png" height=100vw width = 100% alt="Redux Logo">
+      <h1 id="SuddenDeath" style="font-family: Impact; font-size: 4em; color: red; text-align: center; visibility: hidden; position: absolute;">SUDDEN  <br> DEATH</h1>
       <button type="reset" id="reset" class="btn btn-primary" style="font-family:Impact; background-color: #666666;">End</button>
     
 
     </div>
 
-    <div class="column" id="column2" style="background-color:#4D578E;">
+    <div class="column" style="background-color:#4D578E;">
       <h2 style="font-family: Comic Sans MS; font-size: 3.5vw; position: absolute;">Player Two</h2>
 
       <button type="button" onclick="p2Plus(1)" class="btn btn-primary"style="height:10%; width:48%;"> <img src="/static\matchscoring\images\buttonPlus.png" alt="playButton"></button>
@@ -145,9 +144,9 @@
     color:lavender">
       <h1 id="p2score" style="text-align: center; font-family: Impact; font-size: 4em; color: #7e3e98;">00</h1>
 
-      <button type="button" id="p25" onclick="p2Plus(5)" class="btn btn-primary scoreButton" style="height: 25%; width: 100%; ">Head or Torso</button>
-      <button type="button" id="p23" onclick="p2Plus(3)" class="btn btn-primary scoreButton" style="height: 25%; width: 100%; ">Arms or Legs</button>
-      <button type="button" id="p21" onclick="p2Plus(1)" class="btn btn-primary scoreButton" style="height: 25%; width: 100%; ">Hands or Hilt </button>
+      <button type="button" onclick="p2Plus(5)" class="btn btn-primary scoreButton" style="height: 25%; width: 100%; ">Head or Torso</button>
+      <button type="button" onclick="p2Plus(3)" class="btn btn-primary scoreButton" style="height: 25%; width: 100%; ">Arms or Legs</button>
+      <button type="button" onclick="p2Plus(1)" class="btn btn-primary scoreButton" style="height: 25%; width: 100%; ">Hands or Hilt </button>
 
     </div>
   </div>
@@ -182,20 +181,14 @@
       }
     }
     function suddenDeathCheck() {
-        if (((playerOneScore >= 10) && (playerTwoScore >= 10)) || ((mins=0) && (seconds=0))) {
-          document.getElementById("SuddenDeath").style.display="inline";
-          document.getElementById("gsLogo").style.display="none";
-          document.getElementById("p1score").style.color="red";
-          document.getElementById("p2score").style.color="red";
-          document.getElementById("mins").style.color="red";
-          document.getElementById("seconds").style.color="red";
-          document.getElementById("column").style.backgroundColor="red";
-          document.getElementById("column2").style.backgroundColor="red";
-          document.getElementById("middleColumn").style.backgroundColor="black";
-          document.getElementById("p13").disabled=true;
-          document.getElementById("p23").disabled=true;
-          document.getElementById("p11").disabled=true;
-          document.getElementById("p21").disabled=true;
+        if ((playerOneScore >= 10) && (playerTwoScore >= 10)) {
+          // code to implement changes for sudden death
+          document.getElementById("").disabled = true; // disables p1 hand/hilt
+          document.getElementById("").disabled = true; // disables p1 arm/leg
+          document.getElementById("").disabled = true; // disables p2 hand/hilt
+          document.getElementById("").disabled = true; // disables p2 arm/leg
+
+
         }
     }
     function alertFun() {
@@ -206,54 +199,68 @@
     // End of ScoreKeeping Code
  
     // Timer Code
-    var mins =3;
-    var seconds =0;
-    $('#start').click(function(){
-          startTimer();
-    });
-    $('#stop').click(function(){
-          clearTimeout(timex);
-    });
+  
+  var mins =3;
+  var seconds =0;
+  $('#start').click(function(){
+    startTimer();
+  });
 
-    $('#reset').click(function(){
-
+  $('#stop').click(function(){
         clearTimeout(timex);
-        mins =3;      
-        seconds =0;
-        playerOneScore = 0;
-        playerTwoScore = 0;
+  });
+  
+  $('#reset').click(function(){
+    
+    clearTimeout(timex);
+    clearTimeout(timex);
+    clearTimeout(timex);
+    
+      mins =3;      
+      seconds =0;
+      playerOneScore = 0;
+      playerTwoScore = 0;
 
+      
+    $('#mins').html('03:');
+    $('#seconds').html('00');
+    $('#p1score').html('00');
+    $('#p2score').html('00');
 
-      $('#mins').html('03:');
-      $('#seconds').html('00');
-      $('#p1score').html('00');
-      $('#p2score').html('00');
-
-    });
-
-    function startTimer(){
-      timex = setTimeout(function(){
-        seconds--;
-        if(seconds < 0){seconds=59;mins--;
-          if(mins<0) {
+  });
+  
+  function startTimer(){
+    // clearTimeout(timex);  
+    
+    timex = setTimeout(function(){
+      seconds--;
+      if(seconds < 0) {
+        seconds=59;
+        mins--;
+        if(mins<0) {
           mins=0;hours--;
           clearTimeout(timex);
           clearTimeout(timex);
           clearTimeout(timex);
+          clearInterval(nowtime);
+        }
+        if(mins<10) {
+          $("#mins").text('0'+mins+':');
+        }
+        else {
+          $("#mins").text(mins+':');
+        }
+      }
+      if(seconds <10) {
+        $("#seconds").text('0'+seconds);
+      } 
+      else {
+        $("#seconds").text(seconds);
+      }
+        startTimer();
+    },1000);
+  }
 
-            if(hours <10) {$("#hours").text('0'+hours+':')} else $("#hours").text(hours+':');
-            }
-        if(mins<10){
-          $("#mins").text('0'+mins+':');}
-          else $("#mins").text(mins+':');
-                      }
-                      if(seconds <10) {
-          $("#seconds").text('0'+seconds);} else {
-          $("#seconds").text(seconds);
-          }
-          startTimer();
-      },1000);
-    }
   </script>
   
 </body>
