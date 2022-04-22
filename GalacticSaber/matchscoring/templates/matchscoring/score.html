@@ -125,8 +125,8 @@
 
       <!-- Timer Code Goes Here -->
         <div style="width: 25%; height:40vh; background-color: #000000; position: absolute; top: 0px">
-          <span><h3 id="mins" style="font-family: Impact; font-size: 4em; color:#7e3e98; text-align: center;">03:</h3></span>
-          <span><h3 id="seconds" style="font-family: Impact; font-size: 4em; color:#7e3e98; text-align: center;">00</h3></span>
+          <span><h3 id="mins" style="font-family: Impact; font-size: 21vh; color:#7e3e98; text-align: center; display:inline;">3:</h3></span>
+          <span><h3 id="seconds" style="font-family: Impact; font-size: 21vh; color:#7e3e98; text-align: center; display:inline;">00</h3></span>
           <button id="start" class="btn btn-primary" style="position: relative; float: left; width: 50%;"></button>
           <button id="stop" type="button" class="btn btn-primary" style="position: relative; width: 50%;"></button> 
         </div>
@@ -271,7 +271,7 @@
       playerTwoScore = 0;
 
       
-    $('#mins').html('03:');
+    $('#mins').html('3:');
     $('#seconds').html('00');
     $('#p1score').html('00');
     $('#p2score').html('00');
@@ -293,7 +293,7 @@
           clearTimeout(timex);
         }
         if(mins<10) {
-          $("#mins").text('0'+mins+':'); // changes display
+          $("#mins").text(mins+':'); // changes display
         }
         else {
           $("#mins").text(mins+':'); // changes display
