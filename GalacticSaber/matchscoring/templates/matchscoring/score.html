@@ -148,9 +148,9 @@
         </div>
 
       <img src="\static\matchscoring\images\GSLogo.png" alt="gsLogo" id="gsLogo" style="position: relative; top:40%; border-style: solid; border-color: white; width: 100%;">
-      <h1 id="SuddenDeath" class="suddenDeathText" style="display: none;">SUDDEN DEATH</h1>
+      <h1 id="SuddenDeath" class="suddenDeathText" style="display: none; font-family: Impact; font-size:14vh; text-align:center">SUDDEN <br> DEATH</h1>
 
-      <button type="reset" id="reset" class="btn btn-primary" style="position: relative; bottom: 4vh; width:48%; height: 14%; background-color:#666666; border-color:black; font-family: Impact; font-size: 7vh;">End</button>
+      <button type="reset" id="reset" class="btn btn-primary" style="position: relative; top: 45vh; left:6.5vw; width:48%; height: 14%; background-color:#666666; border-color:black; font-family: Impact; font-size: 7vh;">End</button>
     </div>
 
     <div class="column" id="column2" style="background-color:#4D578E;">
@@ -181,7 +181,7 @@
     
     <div class="scoreColumn" style="background-color:rgb(0, 0, 0);
     color:lavender">
-      <h1 id="p2score" style="text-align: center; font-family: Impact; font-size: 4em; color: #7e3e98;">00</h1>
+      <div class="scoreButton" style="border-color: #000000;"><h1 id="p2score" class="bigText" style="position:relative; top: 10%;">00</h1></div>
 
       <button type="button" id="p25" onclick="p2Plus(5)" class="btn btn-primary scoreButton">Head or Torso</button>
       <button type="button" id="p23" onclick="p2Plus(3)" class="btn btn-primary scoreButton">Arms or Legs</button>
@@ -233,7 +233,7 @@
     }
     function suddenDeathCheck() {
         if ((playerOneScore >= 10) && (playerTwoScore >= 10)) {
-          document.getElementById("SuddenDeath").style.display="inline";
+          document.getElementById("SuddenDeath").style.display="block";
           document.getElementById("gsLogo").style.display="none";
           document.getElementById("p1score").style.color="red";
           document.getElementById("p2score").style.color="red";
@@ -263,15 +263,18 @@
   var seconds =0;
   $('#start').click(function(){
     startTimer();
+
   });
 
   $('#stop').click(function(){
+    document.getElementById('start').disabled=false;
         clearTimeout(timex);
         clearTimeout(timex);
         clearTimeout(timex);
   });
   
   $('#reset').click(function(){
+    document.getElementById('start').disabled=false;
     
     clearTimeout(timex);
     clearTimeout(timex);
@@ -292,6 +295,8 @@
 
   // everytime this function runs: seconds goes down by one, then it calls itself again
   function startTimer(){ 
+    document.getElementById("start").disabled=true;
+
     
     timex = setTimeout(function(){
       seconds--;
@@ -300,6 +305,7 @@
         mins--;     
         if(mins<0) { // doesn't run?
           mins=0;hours--;
+          clearInterval(timex);
           clearTimeout(timex);
           clearTimeout(timex);
           clearTimeout(timex);
@@ -317,6 +323,7 @@
       else {
         $("#seconds").text(seconds); // changes display
       }
+  
         startTimer(); // calls itself to ensure timer keeps running
     },1000); // delay between calling itself again
   }
