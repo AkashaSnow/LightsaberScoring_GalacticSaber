@@ -287,7 +287,6 @@
 
   // everytime this function runs: seconds goes down by one, then it calls itself again
   function startTimer(){ 
-    clearInterval(startTimer);
     
     timex = setTimeout(function(){
       seconds--;
@@ -313,7 +312,6 @@
       else {
         $("#seconds").text(seconds); // changes display
       }
-  
         startTimer(); // calls itself to ensure timer keeps running
     },1000); // delay between calling itself again
   }
