@@ -115,7 +115,7 @@
         <div class="panel" id="fouls" data-toggle="collapse" href="#collapse2" style="background-color:#7e3e98;">
           <div class="panel-heading">
             <h4 class="panel-title" style="text-align: center;">
-              <p class="text" id="foulsText" style="font-family: Comic Sans MS; color: black;">Fouls</p>
+              <p class="text" id="foulsText" style="font-family: Comic Sans MS; font-size: 3vw; top:4px; position:relative; color: black;">Fouls</p>
             </h4>
           </div>
           <div id="collapse2" class="panel-collapse collapse">
@@ -158,9 +158,9 @@
         <div class="panel" id="fouls2" data-toggle="collapse" href="#collapse1" style="background-color:#7e3e98;">
           <div class="panel-heading">
             <h4 class="panel-title" style="text-align: center;">
-              <p class="text" id="fouls2Text" style="font-family: Comic Sans MS; color: black;">Fouls</p>
+              <p class="text" id="fouls2Text" style="font-family: Comic Sans MS; font-size: 3vw; top:4px; position:relative; color: black;">Fouls</p>
             </h4>
-          </div>
+          </div> 
           <div id="collapse1" class="panel-collapse collapse">
             <ul class="list-group">
               <a href="#" class="list-group-item" style="background-color: white; height:14vh;"></a>
@@ -177,9 +177,9 @@
     color:lavender">
       <h1 id="p2score" style="text-align: center; font-family: Impact; font-size: 4em; color: #7e3e98;">00</h1>
 
-      <button type="button" id="p25" onclick="p2Plus(5)" class="btn btn-primary scoreButton" style="height: 25%; width: 100%; ">Head or Torso</button>
-      <button type="button" id="p23" onclick="p2Plus(3)" class="btn btn-primary scoreButton" style="height: 25%; width: 100%; ">Arms or Legs</button>
-      <button type="button" id="p21" onclick="p2Plus(1)" class="btn btn-primary scoreButton" style="height: 25%; width: 100%; ">Hands or Hilt </button>
+      <button type="button" id="p25" onclick="p2Plus(5)" class="btn btn-primary scoreButton">Head or Torso</button>
+      <button type="button" id="p23" onclick="p2Plus(3)" class="btn btn-primary scoreButton">Arms or Legs</button>
+      <button type="button" id="p21" onclick="p2Plus(1)" class="btn btn-primary scoreButton">Hands or Hilt </button>
 
     </div>
   </div>
@@ -286,6 +286,7 @@
 
   // everytime this function runs: seconds goes down by one, then it calls itself again
   function startTimer(){ 
+    clearInterval(startTimer);
     
     timex = setTimeout(function(){
       seconds--;
@@ -311,6 +312,7 @@
       else {
         $("#seconds").text(seconds); // changes display
       }
+  
         startTimer(); // calls itself to ensure timer keeps running
     },1000); // delay between calling itself again
   }
