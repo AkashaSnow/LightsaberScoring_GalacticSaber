@@ -2,6 +2,7 @@
 <html>
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css" type="text/css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
@@ -12,70 +13,94 @@
   <style>
     * {
       box-sizing: border-box;
-      margin: 0;
-      height: 10vh;
+      margin: 0%;
     }
     .scoreButton {
       background-color: #000000;
       color: white;
-      border: 1px, solid, white;
+      font-size: 2vw;
+      border-width: 1px;
+      border-style: solid;
+      border-color: white;
+      height: 25%;
+      width: 100%;
     }
-    
     .column {
       float: left;
       width: 18.75%;
       height: 100vh;
-      padding: 10px;
       background-color: #4D578E;
     }
-
     .scoreColumn {
       float: left;
       width: 18.75%;
       height: 100vh;
-      padding: 10px;
+      padding-right: 1vw;
+      padding-left: 1vw;
       background-color: #000000;
+      color: lavender;
     }
-
     .middleColumn {
       float: left;
       width: 25%;
       height: 100vh;
-      padding: 10px;
     }
-    /* Clear floats after the columns */
     .row {
-      height: 100%;
+      height: 100vh;
+      width: 100vw;
+      margin-left: auto;
+      margin-right: auto;
       display: table;
       clear: both;
     }
-    .imageMinus {
+    /* .imageMinus {
       background-image: url("/static\matchscoring\images\buttonPause.png");
       background-repeat: no-repeat;
       background-size: 10vw;
       alt: "-";
+    } */
+    .bigText {
+      margin-top: 0%;
+      text-align: center;
+      font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+      font-size: 18vh;
+      color: #7e3e98;
     }
-
+    .playerTag {
+      position: relative;
+      margin-top: 0%;
+      padding-top: 5vh;
+      padding-bottom: 5vh;
+      width: 100%;
+      background-color: #b7b7b7;
+      color: #000000;
+      text-align: center;
+      font-size: 3.6vw;
+      font-family: Comic Sans MS;
+    }
+    .plusMinusButton {
+      height: 15%;
+      width: 48%;
+      margin-bottom: 3vh;
+    }
   </style>
 </head>
 <body>
-
-  <div class="row" style="height: 100vh; width: 100vw; margin-left: auto; margin-right: auto;">
-    <div class="scoreColumn" style="background-color:rgb(0, 0, 0);
-    color:lavender">
-      <container height="25%"><h1 id="p1score" style="text-align: center; font-family: Impact; font-size: 4em; color: #7e3e98;">00</h1></container>
-      <button type="button" onclick="p1Plus(5)" class="btn btn-primary scoreButton" style="height: 25%; width: 100%; ">Head or Torso</button>
-      <button type="button" onclick="p1Plus(3)" class="btn btn-primary scoreButton" style="height: 25%; width: 100%; ">Arms or Legs</button>
-      <button type="button" onclick="p1Plus(1)"class="btn btn-primary scoreButton" style="height: 25%; width: 100%;">Hands or Hilt </button>
+  <div class="row">
+    <div class="scoreColumn">
+      <div class="scoreButton" style="border-color: #000000;"><h1 id="p1score" class="bigText" style="position:relative; top: 10%;">00</h1></div>
+      <button type="button" id="p15" onclick="p1Plus(5)" class="btn btn-primary scoreButton">Head or Torso</button>
+      <button type="button" id="p13" onclick="p1Plus(3)" class="btn btn-primary scoreButton">Arms or Legs</button>
+      <button type="button" id="p11" onclick="p1Plus(1)" class="btn btn-primary scoreButton">Hands or Hilt </button>
     </div>
 
-    <div class="column" style="background-color:#4D578E;">
-      <h2 style="font-family: Comic Sans MS; font-size: 3.5vw; position: absolute;">Player One</h2>
-      <button type="button" onclick="p1Plus(-1)" class="btn btn-primary imageMinus" style="height:10%; width:48%;"></button>
-      <button type="button" onclick="p1Plus(1)" class="btn btn-primary" style="height:10%; width:48%;" > </button>
+    <div class="column" id="column">
+      <h2 class="playerTag">Player One</h2>
+      <button type="button" onclick="p1Plus(-1)" class="btn btn-primary plusMinusButton"></button>
+      <button type="button" onclick="p1Plus(1)" class="btn btn-primary plusMinusButton"> </button>
       
       <!-- heres the foul code -->
-      <div class="dropup" style=" width:100%; top: 10px;">
+      <div class="dropup" style=" width:100%; height: 68vh; position:relative; bottom: 1vh;">
         <div class="panel" data-toggle="collapse" href="#collapse2" style="background-color:#7e3e98;">
           <div class="panel-heading">
             <h4 class="panel-title" style="text-align: center;">
@@ -95,30 +120,31 @@
       
     </div>
     
-    <div class="middleColumn" style="background-color:#212c68;">
+    <div class="middleColumn" id="middleColumn" style="background-color:#212c68;">
 
       <!-- Timer Code Goes Here -->
-        <div style="margin-left: -.65vw; margin-right: 0px; width: 24%; height:40vh; background-color: #000000; position: absolute; top: 0px">
-          <span><h3 id="mins" style="border-style: solid; font-family: Impact; font-size: 4em; color:#7e3e98; text-align: center;">03:</h3></span>
+        <div style="width: 25%; height:40vh; background-color: #000000; position: absolute; top: 0px">
+          <span><h3 id="mins" style="font-family: Impact; font-size: 4em; color:#7e3e98; text-align: center;">03:</h3></span>
           <span><h3 id="seconds" style="font-family: Impact; font-size: 4em; color:#7e3e98; text-align: center;">00</h3></span>
-        </div>
-        <div style="margin-left: +40.vw; margin-right: 0xp; width: 15%; height: 70px;">
-        <button id="start" class="btn btn-primary"> <img src="/static\matchscoring\images\buttonPlay.png" alt="playButton"></button>
-        <button id="stop" type="button" class="btn btn-primary"> <img src="/static\matchscoring\images\buttonPause.png" alt="pauseButton"></button> 
+          <button id="start" class="btn btn-primary" style="position: relative; float: left; width: 50%;"></button>
+          <button id="stop" type="button" class="btn btn-primary" style="position: relative; width: 50%;"></button> 
         </div>
 
-      <img src="\static\matchscoring\images\GSLogo.png" height=100vw width = 100% alt="Redux Logo">
-      <h1 id="SuddenDeath" style="font-family: Impact; font-size: 4em; color: red; text-align: center; visibility: hidden; position: absolute;">SUDDEN  <br> DEATH</h1>
+          <br> 
+          <br> 
+          <br> 
+      <img src="\static\matchscoring\images\GSLogo.png" alt="gsLogo" id="gsLogo" style="position: relative; top:40%; border-style: solid; border-color: white; width: 100%;">
+      <h1 id="SuddenDeath" style="font-family: Impact; font-size: 4em; color: red; text-align: center; display: none; position: absolute; bottom:60vh">SUDDEN  <br> DEATH</h1>
       <button type="reset" id="reset" class="btn btn-primary" style="font-family:Impact; background-color: #666666;">End</button>
     
 
     </div>
 
-    <div class="column" style="background-color:#4D578E;">
-      <h2 style="font-family: Comic Sans MS; font-size: 3.5vw; position: absolute;">Player Two</h2>
+    <div class="column" id="column2" style="background-color:#4D578E;">
+      <h2 class="playerTag"">Player Two</h2>
 
-      <button type="button" onclick="p2Plus(1)" class="btn btn-primary"style="height:10%; width:48%;"> <img src="/static\matchscoring\images\buttonPlus.png" alt="playButton"></button>
-      <button type="button" onclick="p2Plus(-1)" class="btn btn-primary"style="height:10%; width:48%;"> <img src="/static\matchscoring\images\buttonMinus.png" alt="pauseButton"></button>
+      <button type="button" onclick="p2Plus(1)" class="btn btn-primary plusMinusButton"> <img src="/static\matchscoring\images\image.png" alt="+1"></button>
+      <button type="button" onclick="p2Plus(-1)" class="btn btn-primary plusMinusButton"> <img src="/static\matchscoring\images\image.png" alt="-1"></button>
       
       <!-- heres the foul code -->
       <div class="dropup" style=" width:100%; top: 10px;">
@@ -144,32 +170,44 @@
     color:lavender">
       <h1 id="p2score" style="text-align: center; font-family: Impact; font-size: 4em; color: #7e3e98;">00</h1>
 
-      <button type="button" onclick="p2Plus(5)" class="btn btn-primary scoreButton" style="height: 25%; width: 100%; ">Head or Torso</button>
-      <button type="button" onclick="p2Plus(3)" class="btn btn-primary scoreButton" style="height: 25%; width: 100%; ">Arms or Legs</button>
-      <button type="button" onclick="p2Plus(1)" class="btn btn-primary scoreButton" style="height: 25%; width: 100%; ">Hands or Hilt </button>
+      <button type="button" id="p25" onclick="p2Plus(5)" class="btn btn-primary scoreButton" style="height: 25%; width: 100%; ">Head or Torso</button>
+      <button type="button" id="p23" onclick="p2Plus(3)" class="btn btn-primary scoreButton" style="height: 25%; width: 100%; ">Arms or Legs</button>
+      <button type="button" id="p21" onclick="p2Plus(1)" class="btn btn-primary scoreButton" style="height: 25%; width: 100%; ">Hands or Hilt </button>
 
     </div>
   </div>
 
   <script>
-    var fontize = $("#title").css("font-size");
-    var i = 0/*remove unit from integer*/
-    while($("#container").find("span").width() > $("#container").width()) {
-    var currentFontSize = parseInt($("#container").find("span").css("font-size")); 
-    $("#container").find("span").css("font-size",currentFontSize-1); 
-    }
+    // var fontize = $("#title").css("font-size");
+    // var i = 0/*remove unit from integer*/
+    // while($("#container").find("span").width() > $("#container").width()) {
+    // var currentFontSize = parseInt($("#container").find("span").css("font-size")); 
+    // $("#container").find("span").css("font-size",currentFontSize-1); 
+    // }
 
     // Start of ScoreKeeping Code
     var playerOneScore=00
     var playerTwoScore=00
     function p1Plus(amount) {
         playerOneScore+= amount;
-        document.getElementById('p1score').innerHTML= playerOneScore;
+        // if/else here helps to always keep the display two digits,
+        if ((playerOneScore < 10) && (playerOneScore >= 0)) {
+          document.getElementById('p1score').innerHTML= "0" + playerOneScore;
+        }
+        else {
+          document.getElementById('p1score').innerHTML= playerOneScore;
+        }
         suddenDeathCheck()
     }
     function p2Plus(amount) {
         playerTwoScore+= amount;
-        document.getElementById('p2score').innerHTML= playerTwoScore;
+        // if/else here helps to always keep the display two digits
+        if ((playerTwoScore < 10) && (playerTwoScore >= 0)) {
+          document.getElementById('p2score').innerHTML= "0" + playerTwoScore;
+        }
+        else {
+          document.getElementById('p2score').innerHTML= playerTwoScore;
+        }
         suddenDeathCheck()
     }
     function winCheck() {
@@ -181,19 +219,23 @@
       }
     }
     function suddenDeathCheck() {
-        if ((playerOneScore >= 10) && (playerTwoScore >= 10)) {
-          // code to implement changes for sudden death
-          document.getElementById("").disabled = true; // disables p1 hand/hilt
-          document.getElementById("").disabled = true; // disables p1 arm/leg
-          document.getElementById("").disabled = true; // disables p2 hand/hilt
-          document.getElementById("").disabled = true; // disables p2 arm/leg
-
-
+        if (((playerOneScore >= 10) && (playerTwoScore >= 10)) || ((mins==0) && (seconds==0))) {
+          document.getElementById("SuddenDeath").style.display="inline";
+          document.getElementById("gsLogo").style.display="none";
+          document.getElementById("p1score").style.color="red";
+          document.getElementById("p2score").style.color="red";
+          document.getElementById("mins").style.color="red";
+          document.getElementById("seconds").style.color="red";
+          document.getElementById("column").style.backgroundColor="red";
+          document.getElementById("column2").style.backgroundColor="red";
+          document.getElementById("middleColumn").style.backgroundColor="black";
+          document.getElementById("p13").disabled=true;
+          document.getElementById("p23").disabled=true;
+          document.getElementById("p11").disabled=true;
+          document.getElementById("p21").disabled=true;
         }
     }
-    function alertFun() {
-      alert("Yippee!")
-    }
+
 
 
     // End of ScoreKeeping Code
@@ -207,6 +249,8 @@
   });
 
   $('#stop').click(function(){
+        clearTimeout(timex);
+        clearTimeout(timex);
         clearTimeout(timex);
   });
   
@@ -228,36 +272,36 @@
     $('#p2score').html('00');
 
   });
-  
-  function startTimer(){
-    // clearTimeout(timex);  
+
+  // everytime this function runs: seconds goes down by one, then it calls itself again
+  function startTimer(){ 
     
     timex = setTimeout(function(){
       seconds--;
       if(seconds < 0) {
-        seconds=59;
-        mins--;
-        if(mins<0) {
+        seconds=59; // converts one minute to 60 seconds
+        mins--;     
+        if(mins<0) { // doesn't run?
           mins=0;hours--;
           clearTimeout(timex);
           clearTimeout(timex);
           clearTimeout(timex);
         }
         if(mins<10) {
-          $("#mins").text('0'+mins+':');
+          $("#mins").text('0'+mins+':'); // changes display
         }
         else {
-          $("#mins").text(mins+':');
+          $("#mins").text(mins+':'); // changes display
         }
       }
       if(seconds <10) {
-        $("#seconds").text('0'+seconds);
+        $("#seconds").text('0'+seconds); // changes display
       } 
       else {
-        $("#seconds").text(seconds);
+        $("#seconds").text(seconds); // changes display
       }
-        startTimer();
-    },1000);
+        startTimer(); // calls itself to ensure timer keeps running
+    },1000); // delay between calling itself again
   }
 
   </script>
