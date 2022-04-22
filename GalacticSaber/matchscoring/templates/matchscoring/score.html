@@ -220,7 +220,7 @@
       }
     }
     function suddenDeathCheck() {
-        if (((playerOneScore >= 10) && (playerTwoScore >= 10)) || ((mins==0) && (seconds==0))) {
+        if ((playerOneScore >= 10) && (playerTwoScore >= 10)) {
           document.getElementById("SuddenDeath").style.display="inline";
           document.getElementById("gsLogo").style.display="none";
           document.getElementById("p1score").style.color="red";
