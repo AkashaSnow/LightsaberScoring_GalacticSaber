@@ -13,7 +13,7 @@
   <style>
     * {
       box-sizing: border-box;
-      margin: 0%;
+      margin: 0;
     }
     .scoreButton {
       background-color: #000000;
@@ -24,6 +24,7 @@
       border-color: white;
       height: 25%;
       width: 100%;
+      margin-bottom: 1px
     }
     .column {
       float: left;
@@ -92,6 +93,12 @@
       width: 48%;
       margin-bottom: 3vh;
     }
+    .timerButton {
+      margin: 5px;
+      position: relative;
+      width: 30%;
+
+    }
 
   </style>
 </head>
@@ -133,9 +140,9 @@
     <div class="middleColumn" id="middleColumn" style="background-color:#212c68;">
 
       <!-- Timer Code Goes Here -->
-        <div style="width: 25%; height:40vh; background-color: #000000; position: absolute; top: 0px">
-          <button id="start" class="btn btn-primary" style="position: relative; float: left; width: 50%;"></button>
-          <button id="stop" type="button" class="btn btn-primary" style="position: relative; width: 50%;"></button>
+        <div style="width: 25%; height:40vh; background-color: #000000; position: relative; top: 0px">
+          <button id="start" class="btn btn-primary timerButton" style="float: left; margin-left: auto; margin-right: auto;"></button>
+          <button id="stop" type="button" class="btn btn-primary timerButton" style="margin-right: auto; margin-left: auto;"></button>
           <span><h3 id="mins" style="font-family: Impact; font-size: 12vw; color:#7e3e98; text-align: center; display:inline;">3:</h3></span>
           <span><h3 id="seconds" style="font-family: Impact; font-size: 12vw; color:#7e3e98; text-align: center; display:inline;">00</h3></span>
         </div>
@@ -256,6 +263,7 @@
   var seconds =0;
   $('#start').click(function(){
     startTimer();
+
   });
 
   $('#stop').click(function(){
@@ -285,6 +293,8 @@
 
   // everytime this function runs: seconds goes down by one, then it calls itself again
   function startTimer(){ 
+    document.getElementById("start").disabled=true;
+
     
     timex = setTimeout(function(){
       seconds--;
@@ -293,6 +303,7 @@
         mins--;     
         if(mins<0) { // doesn't run?
           mins=0;hours--;
+          clearInterval(timex);
           clearTimeout(timex);
           clearTimeout(timex);
           clearTimeout(timex);
@@ -310,6 +321,7 @@
       else {
         $("#seconds").text(seconds); // changes display
       }
+  
         startTimer(); // calls itself to ensure timer keeps running
     },1000); // delay between calling itself again
   }
