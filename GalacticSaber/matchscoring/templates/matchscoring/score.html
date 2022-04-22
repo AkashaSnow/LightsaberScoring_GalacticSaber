@@ -102,7 +102,7 @@
           <span><h3 id="mins" style="border-style: solid; font-family: Impact; font-size: 4em; color:#7e3e98; text-align: center;">03:</h3></span>
           <span><h3 id="seconds" style="font-family: Impact; font-size: 4em; color:#7e3e98; text-align: center;">00</h3></span>
         </div>
-        <div style="margin-left: +40.vw; margin-right: 0xp; width: 15%; height: 10px;">
+        <div style="margin-left: +40.vw; margin-right: 0xp; width: 15%; height: 70px;">
         <button id="start" class="btn btn-primary"> <img src="/static\matchscoring\images\buttonPlay.png" alt="playButton"></button>
         <button id="stop" type="button" class="btn btn-primary"> <img src="/static\matchscoring\images\buttonPause.png" alt="pauseButton"></button> 
         </div>
@@ -242,7 +242,6 @@
           clearTimeout(timex);
           clearTimeout(timex);
           clearTimeout(timex);
-          clearInterval(nowtime);
         }
         if(mins<10) {
           $("#mins").text('0'+mins+':');
