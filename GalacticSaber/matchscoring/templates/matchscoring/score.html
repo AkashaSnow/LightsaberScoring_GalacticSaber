@@ -147,7 +147,7 @@
       <img src="\static\matchscoring\images\GSLogo.png" alt="gsLogo" id="gsLogo" style="position: relative; top:40%; border-style: solid; border-color: white; width: 100%;">
       <h1 id="SuddenDeath" class="suddenDeathText" style="display: none;">SUDDEN DEATH</h1>
 
-      <button type="reset" id="reset" class="btn btn-primary" style="position: relative; bottom: 4vh;">End</button>
+      <button type="reset" id="reset" class="btn btn-primary" style="position: relative; bottom: 4vh; width:48%; height: 14%; background-color:#666666; border-color:black; font-family: Impact; font-size: 7vh;">End</button>
     </div>
 
     <div class="column" id="column2" style="background-color:#4D578E;">
@@ -289,7 +289,6 @@
 
   // everytime this function runs: seconds goes down by one, then it calls itself again
   function startTimer(){ 
-    clearInterval(startTimer);
     
     timex = setTimeout(function(){
       seconds--;
@@ -315,7 +314,6 @@
       else {
         $("#seconds").text(seconds); // changes display
       }
-  
         startTimer(); // calls itself to ensure timer keeps running
     },1000); // delay between calling itself again
   }
