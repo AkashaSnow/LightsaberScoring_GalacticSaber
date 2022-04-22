@@ -267,12 +267,14 @@
   });
 
   $('#stop').click(function(){
+    document.getElementById('start').disabled=false;
         clearTimeout(timex);
         clearTimeout(timex);
         clearTimeout(timex);
   });
   
   $('#reset').click(function(){
+    document.getElementById('start').disabled=false;
     
     clearTimeout(timex);
     clearTimeout(timex);
