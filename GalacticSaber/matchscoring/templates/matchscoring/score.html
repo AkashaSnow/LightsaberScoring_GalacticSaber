@@ -120,10 +120,10 @@
           </div>
           <div id="collapse2" class="panel-collapse collapse">
             <ul class="list-group">
-              <a href="#" class="list-group-item" style="background-color: white; height:14vh;"></a>
-              <a href="#" class="list-group-item" style="background-color: yellow; height:14vh;"></a>
-              <a href="#" class="list-group-item" style="background-color: red; height:14vh;"></a>
-              <a href="#" class="list-group-item" style="background-color: black; height:14vh;"></a>
+              <a href="#" class="list-group-item" style="background-color: white; height:13vh;"></a>
+              <a href="#" class="list-group-item" style="background-color: yellow; height:13vh;"></a>
+              <a href="#" class="list-group-item" style="background-color: red; height:13vh;"></a>
+              <a href="#" class="list-group-item" style="background-color: black; height:13vh;"></a>
             </ul>
           </div>
         </div>
@@ -135,17 +135,16 @@
 
       <!-- Timer Code Goes Here -->
         <div style="width: 25%; height:40vh; background-color: #000000; position: absolute; top: 0px">
+          <button id="start" class="btn btn-primary" style="position: relative; float: left; width: 50%;"></button>
+          <button id="stop" type="button" class="btn btn-primary" style="position: relative; width: 50%;"></button>
           <span><h3 id="mins" style="font-family: Impact; font-size: 12vw; color:#7e3e98; text-align: center; display:inline;">3:</h3></span>
           <span><h3 id="seconds" style="font-family: Impact; font-size: 12vw; color:#7e3e98; text-align: center; display:inline;">00</h3></span>
-          <button id="start" class="btn btn-primary" style="position: relative; float: left; width: 50%;"></button>
-          <button id="stop" type="button" class="btn btn-primary" style="position: relative; width: 50%;"></button> 
         </div>
 
       <img src="\static\matchscoring\images\GSLogo.png" alt="gsLogo" id="gsLogo" style="position: relative; top:40%; border-style: solid; border-color: white; width: 100%;">
       <h1 id="SuddenDeath" class="suddenDeathText" style="display: none;">SUDDEN DEATH</h1>
-      <button type="reset" id="reset" class="btn btn-primary" style="position: relative; bottom: 4vh; background-color:#666666; width:48%; height:14%; font-family: Impact; font-size:7vh; border-color:black">End</button>
-    
 
+      <button type="reset" id="reset" class="btn btn-primary" style="position: relative; bottom: 4vh;">End</button>
     </div>
 
     <div class="column" id="column2" style="background-color:#4D578E;">
@@ -178,9 +177,9 @@
     color:lavender">
       <h1 id="p2score" style="text-align: center; font-family: Impact; font-size: 4em; color: #7e3e98;">00</h1>
 
-      <button type="button" id="p25" onclick="p2Plus(5)" class="btn btn-primary scoreButton" style="height: 25%; width: 100%; ">Head or Torso</button>
-      <button type="button" id="p23" onclick="p2Plus(3)" class="btn btn-primary scoreButton" style="height: 25%; width: 100%; ">Arms or Legs</button>
-      <button type="button" id="p21" onclick="p2Plus(1)" class="btn btn-primary scoreButton" style="height: 25%; width: 100%; ">Hands or Hilt </button>
+      <button type="button" id="p25" onclick="p2Plus(5)" class="btn btn-primary scoreButton">Head or Torso</button>
+      <button type="button" id="p23" onclick="p2Plus(3)" class="btn btn-primary scoreButton">Arms or Legs</button>
+      <button type="button" id="p21" onclick="p2Plus(1)" class="btn btn-primary scoreButton">Hands or Hilt </button>
 
     </div>
   </div>
