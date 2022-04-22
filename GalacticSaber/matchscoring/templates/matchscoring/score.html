@@ -101,10 +101,10 @@
       
       <!-- heres the foul code -->
       <div class="dropup" style=" width:100%; height: 68vh; position:relative; bottom: 1vh;">
-        <div class="panel" data-toggle="collapse" href="#collapse2" style="background-color:#7e3e98;">
+        <div class="panel" id="fouls" data-toggle="collapse" href="#collapse2" style="background-color:#7e3e98;">
           <div class="panel-heading">
             <h4 class="panel-title" style="text-align: center;">
-              <p class="text" style="font-family: Comic Sans MS; color: black;">Fouls</p>
+              <p class="text" id="foulsText" style="font-family: Comic Sans MS; color: black;">Fouls</p>
             </h4>
           </div>
           <div id="collapse2" class="panel-collapse collapse">
@@ -148,10 +148,10 @@
       
       <!-- heres the foul code -->
       <div class="dropup" style=" width:100%; top: 10px;">
-        <div class="panel" data-toggle="collapse" href="#collapse1" style="background-color:#7e3e98;">
+        <div class="panel" id="fouls2" data-toggle="collapse" href="#collapse1" style="background-color:#7e3e98;">
           <div class="panel-heading">
             <h4 class="panel-title" style="text-align: center;">
-              <p class="text" style="font-family: Comic Sans MS; color: black;">Fouls</p>
+              <p class="text" id="fouls2Text" style="font-family: Comic Sans MS; color: black;">Fouls</p>
             </h4>
           </div>
           <div id="collapse1" class="panel-collapse collapse">
@@ -226,8 +226,12 @@
           document.getElementById("p2score").style.color="red";
           document.getElementById("mins").style.color="red";
           document.getElementById("seconds").style.color="red";
+          document.getElementById("foulsText").style.color="red";
+          document.getElementById("fouls2Text").style.color="red";
           document.getElementById("column").style.backgroundColor="red";
           document.getElementById("column2").style.backgroundColor="red";
+          document.getElementById("fouls").style.backgroundColor="black";
+          document.getElementById("fouls2").style.backgroundColor="black";
           document.getElementById("middleColumn").style.backgroundColor="black";
           document.getElementById("p13").disabled=true;
           document.getElementById("p23").disabled=true;
