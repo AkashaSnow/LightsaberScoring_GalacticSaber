@@ -112,8 +112,8 @@
 
     <div class="column" id="column">
       <h2 class="playerTag">Player One</h2>
-      <button type="button" onclick="p1Plus(-1)" class="btn btn-primary plusMinusButton" style="background-color:#666666; color:#ffffff; font-family: Impact; font-size:14vh; vertical-align:middle; text-align:center;">-</button>
-      <button type="button" onclick="p1Plus(1)" class="btn btn-primary plusMinusButton" style="background-color:#666666; color:#ffffff; font-family: Impact; font-size:14vh; vertical-align:middle; text-align:center;">+</button>
+      <button type="button" onclick="p1Plus(-1)" class="btn btn-primary plusMinusButton" style="background-color:#666666; color:#ffffff; border-color:black; font-family: Impact; font-size:14vh; vertical-align:middle; text-align:center;">-</button>
+      <button type="button" onclick="p1Plus(1)" class="btn btn-primary plusMinusButton" style="background-color:#666666; color:#ffffff; border-color:black; font-family: Impact; font-size:14vh; vertical-align:middle; text-align:center;">+</button>
       
       <!-- heres the foul code -->
       <div class="dropup" style="width:100%; height: 68vh; position:relative; bottom: 1vh;">
@@ -140,10 +140,10 @@
 
       <!-- Timer Code Goes Here -->
         <div style="width: 100%; height:40vh; background-color: #000000; position: relative; top: 0px">
-          <button id="start" class="btn btn-primary timerButton" style="float: left;"></button>
-          <button id="stop" type="button" class="btn btn-primary timerButton"></button>
-          <span><h3 id="mins" class="bigText" style="font-family: Impact; font-size: 12vw; color:#7e3e98; text-align: center; display:inline; clear: left;">3:</h3></span>
-          <span><h3 id="seconds" class="bigText" style="font-family: Impact; font-size: 12vw; color:#7e3e98; text-align: center; display:inline; float: right;">00</h3></span>
+          <button id="start" class="btn btn-primary timerButton" style="float: left; background-color: #b7b7b7; color:#7e3e98; border-color:black; font-family: Impact;">▶</button>
+          <button id="stop" type="button" class="btn btn-primary timerButton" style="background-color: #b7b7b7; color:#7e3e98; border-color:black; font-family: Impact; font-weight:bold;">| |</button>
+          <span><h3 id="mins" style="font-family: Impact; font-size: 12vw; color:#7e3e98; text-align: center; display:inline;">3:</h3></span>
+          <span><h3 id="seconds" style="font-family: Impact; font-size: 12vw; color:#7e3e98; text-align: center; display:inline;">00</h3></span>
         </div>
 
       <img src="\static\matchscoring\images\GSLogo.png" alt="gsLogo" id="gsLogo" style="position: relative; top:5%; border-style: solid; border-color: white; width: 100%;">
@@ -155,8 +155,10 @@
     <div class="column" id="column2" style="background-color:#4D578E;">
       <h2 class="playerTag"">Player Two</h2>
 
-      <button type="button" onclick="p2Plus(1)" class="btn btn-primary plusMinusButton"> <img src="/static\matchscoring\images\image.png" alt="+1"></button>
-      <button type="button" onclick="p2Plus(-1)" class="btn btn-primary plusMinusButton"> <img src="/static\matchscoring\images\image.png" alt="-1"></button>
+      <!-- <button type="button" onclick="p2Plus(1)" class="btn btn-primary plusMinusButton"> <img src="/static\matchscoring\images\image.png" alt="+1"></button>
+      <button type="button" onclick="p2Plus(-1)" class="btn btn-primary plusMinusButton"> <img src="/static\matchscoring\images\image.png" alt="-1"></button> -->
+      <button type="button" onclick="p2Plus(1)" class="btn btn-primary plusMinusButton" style="background-color:#666666; color:#ffffff; border-color:black; font-family: Impact; font-size:14vh; vertical-align:middle; text-align:center;">+</button>
+      <button type="button" onclick="p2Plus(-1)" class="btn btn-primary plusMinusButton" style="background-color:#666666; color:#ffffff; border-color:black; font-family: Impact; font-size:14vh; vertical-align:middle; text-align:center;">-</button>
       
       <!-- heres the foul code -->
       <div class="dropup" style=" width:100%; height: 68vh; position:relative; bottom: 1vh;">
