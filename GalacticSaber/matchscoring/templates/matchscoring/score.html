@@ -83,12 +83,13 @@
       font-family: Comic Sans MS;
     }
     .plusMinusButton {
+      padding: 0;
+      vertical-align: center;
       height: 15%;
       width: 48%;
       margin-bottom: 3vh;
     }
     .timerButton {
-
 
       margin-top: 2vh;
       margin-left: 1vw;
@@ -157,8 +158,8 @@
 
       <!-- <button type="button" onclick="p2Plus(1)" class="btn btn-primary plusMinusButton"> <img src="/static\matchscoring\images\image.png" alt="+1"></button>
       <button type="button" onclick="p2Plus(-1)" class="btn btn-primary plusMinusButton"> <img src="/static\matchscoring\images\image.png" alt="-1"></button> -->
-      <button type="button" id="p2+" onclick="p2Plus(1)" class="btn btn-primary plusMinusButton" style="background-color:#666666; color:#ffffff; border-color:black; font-family: Impact; font-size:14vh; vertical-align:middle; text-align:center;">+</button>
-      <button type="button" id="p2-" onclick="p2Plus(-1)" class="btn btn-primary plusMinusButton" style="background-color:#666666; color:#ffffff; border-color:black; font-family: Impact; font-size:14vh; vertical-align:middle; text-align:center;">-</button>
+      <button type="button" id="p2+" onclick="p2Plus(1)" class="btn btn-primary plusMinusButton" style="background-color:#666666; color:#ffffff; border-color:black; font-family: Impact; font-size:14vh; text-align:center;">+</button>
+      <button type="button" id="p2-" onclick="p2Plus(-1)" class="btn btn-primary plusMinusButton" style="background-color:#666666; color:#ffffff; border-color:black; font-family: Impact; font-size:14vh; text-align:center;">-</button>
       
       <!-- heres the foul code -->
       <div class="dropup" style=" width:100%; height: 64vh; position:relative; bottom: 1vh;">
@@ -187,6 +188,7 @@
       <button type="button" id="p25" onclick="p2Plus(5)" class="btn btn-primary scoreButton">Head or Torso</button>
       <button type="button" id="p23" onclick="p2Plus(3)" class="btn btn-primary scoreButton">Arms or Legs</button>
       <button type="button" id="p21" onclick="p2Plus(1)" class="btn btn-primary scoreButton">Hands or Hilt </button>
+    </div>
 
     </div>
   </div>
@@ -337,7 +339,7 @@
       }
   
         startTimer(); // calls itself to ensure timer keeps running
-    },100); // delay between calling itself again
+    },1000); // delay between calling itself again
   }
 
   
