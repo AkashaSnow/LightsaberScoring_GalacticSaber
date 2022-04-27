@@ -88,6 +88,9 @@
       height: 15%;
       width: 48%;
       margin-bottom: 3vh;
+      background-color:#666666;
+      border-color:black; font-family: Impact; font-size:11vh; vertical-align:middle; text-align:center;
+
     }
     .timerButton {
 
@@ -106,8 +109,6 @@
   </style>
 </head>
 <body>
-  <img src="\static\matchscoring\images\buttonPlay.png" onclick="alerthehe()">
-
   <div class="row">
     <div class="scoreColumn">
       <div class="scoreButton" style="border-color: #000000;"><h1 id="p1score" class="bigText" style="position:relative; top: 10%;">00</h1></div>
@@ -118,8 +119,8 @@
 
     <div class="column" id="column">
       <h2 class="playerTag">Player One</h2>
-      <button type="button" id="p1-" onclick="p1Plus(-1)" class="btn btn-primary plusMinusButton" style="background-color:#666666; color:#ffffff; border-color:black; font-family: Impact; font-size:11vh; vertical-align:middle; text-align:center;">-</button>
-      <button type="button" id="p1+" onclick="p1Plus(1)" class="btn btn-primary plusMinusButton" style="background-color:#666666; color:#ffffff; border-color:black; font-family: Impact; font-size:11vh; vertical-align:middle; text-align:center;">+</button>
+      <button type="button" id="p1-" onclick="p1Plus(-1)" class="btn btn-primary plusMinusButton">-</button>
+      <button type="button" id="p1+" onclick="p1Plus(1)" class="btn btn-primary plusMinusButton">+</button>
       
       <!-- heres the foul code -->
       <div class="dropup" style="width:100%; height: 64vh; position:relative; bottom: 1vh;">
