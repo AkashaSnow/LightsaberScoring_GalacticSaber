@@ -141,10 +141,12 @@
 
       <!-- Timer Code Goes Here -->
         <div style="width: 100%; height:40vh; background-color: #000000; position: relative; top: 0px">
-          <button id="start" class="btn btn-primary timerButton" style="float: left; background-color: #b7b7b7; color:#7e3e98; border-color:black; font-family: Impact;">▶</button>
-          <button id="stop" type="button" class="btn btn-primary timerButton" style="background-color: #b7b7b7; color:#7e3e98; border-color:black; font-family: Impact; font-weight:bolder;">l l</button>
-          <span><h3 id="mins" style="font-family: Impact; font-size: 12vw; color:#7e3e98; text-align: center; display:inline;">3:</h3></span>
-          <span><h3 id="seconds" style="font-family: Impact; font-size: 12vw; color:#7e3e98; text-align: center; display:inline;">00</h3></span>
+          <button id="start" class="btn btn-primary timerButton" style="float: left; background-color: #b7b7b7; color:#7e3e98; border-color:black; font-family: Impact; text-align: center; padding: 3px; vertical-align:middle;">▶</button>
+          <button id="stop" type="button" class="btn btn-primary timerButton" style="background-color: #b7b7b7; color:#7e3e98; border-color:black; font-family: Impact; font-weight:bolder; text-align: center; padding: 5px; vertical-align:middle;">l l</button>
+          <div style="text-align: center;"
+            <span><h3 id="mins" style="font-family: Impact; font-size: 12vw; color:#7e3e98; display:inline-block;">3:</h3></span>
+            <span><h3 id="seconds" style="font-family: Impact; font-size: 12vw; color:#7e3e98; display:inline-block;">00</h3></span>
+          </div>
         </div>
 
       <img src="\static\matchscoring\images\GSLogo.png" alt="gsLogo" id="gsLogo" style="position: relative; top:5%; border-style: solid; border-color: white; width: 100%; height: 40vh">
@@ -266,6 +268,36 @@
           document.getElementById("SuddenDeath").style.display="block";
         }
     }
+    function undoSuddenDeath() {
+          document.getElementById("column").style.backgroundColor="#4D578E";
+          document.getElementById("column2").style.backgroundColor="#4D578E";
+          document.getElementById("fouls").style.backgroundColor="#7e3e98";
+          document.getElementById("fouls2").style.backgroundColor="#7e3e98";
+          document.getElementById("middleColumn").style.backgroundColor="#212c68";
+          document.getElementById("start").style.backgroundColor="#b7b7b7";
+          document.getElementById("stop").style.backgroundColor="#b7b7b7";
+          
+          document.getElementById("foulsText").style.color="black";
+          document.getElementById("fouls2Text").style.color="black";
+          document.getElementById("mins").style.color="#7e3e98";
+          document.getElementById("p1+").style.color="white";
+          document.getElementById("p1-").style.color="white";
+          document.getElementById("p1score").style.color="#7e3e98";
+          document.getElementById("p2+").style.color="white";
+          document.getElementById("p2-").style.color="white";
+          document.getElementById("p2score").style.color="#7e3e98";
+          document.getElementById("seconds").style.color="#7e3e98";
+          document.getElementById("start").style.color="#7e3e98";
+          document.getElementById("stop").style.color="#7e3e98";
+
+          document.getElementById("p11").disabled=false;
+          document.getElementById("p13").disabled=false;
+          document.getElementById("p21").disabled=false;
+          document.getElementById("p23").disabled=false;
+          
+          document.getElementById("gsLogo").style.display="block";
+          document.getElementById("SuddenDeath").style.display="none";
+    }
 
 
 
@@ -304,6 +336,8 @@
     $('#seconds').html('00');
     $('#p1score').html('00');
     $('#p2score').html('00');
+
+    undoSuddenDeath();
 
   });
 
