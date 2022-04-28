@@ -110,6 +110,7 @@
       background-color: #66307b;
     }
 
+
   </style>
 </head>
 <body>
@@ -136,10 +137,10 @@
           </div>
           <div id="collapse2" class="panel-collapse collapse">
             <ul class="list-group">
-              <a href="#" class="list-group-item" style="background-color: white; height:13vh;"></a>
-              <a href="#" class="list-group-item" style="background-color: yellow; height:13vh;"></a>
-              <a href="#" class="list-group-item" style="background-color: red; height:13vh;"></a>
-              <a href="#" class="list-group-item" style="background-color: black; height:13vh;"></a>
+              <a href="#" onclick="whiteFoul(1)" id="p1WhiteFoul" class="list-group-item" style="background-color: white; height:13vh; text-align: right;">0</a>
+              <a href="#" onclick="yellowFoul(1)" id="p1YellowFoul" class="list-group-item" style="background-color: yellow; height:13vh; text-align: right;">0</a>
+              <a href="#" onclick="redFoul(1)" id="p1RedFoul" class="list-group-item" style="background-color: red; height:13vh; text-align: right;">0</a>
+              <a href="#" onclick="blackFoul(1)" id="p1BlackFoul" class="list-group-item" style="background-color: black; height:13vh; text-align: right;">0</a>
             </ul>
           </div>
         </div>
@@ -187,10 +188,10 @@
           </div> 
           <div id="collapse1" class="panel-collapse collapse">
             <ul class="list-group">
-              <a href="#" class="list-group-item" style="background-color: white; height:13vh;"></a>
-              <a href="#" class="list-group-item" style="background-color: yellow; height:13vh;"></a>
-              <a href="#" class="list-group-item" style="background-color: red; height:13vh;"></a>
-              <a href="#" class="list-group-item" style="background-color: black; height:13vh;"></a>
+              <a href="#" onclick="whiteFoul(2)"  id="p2WhiteFoul"  class="list-group-item" style="background-color: white;  height:13vh;">0</a>
+              <a href="#" onclick="yellowFoul(2)" id="p2YellowFoul" class="list-group-item" style="background-color: yellow; height:13vh;">0</a>
+              <a href="#" onclick="redFoul(2)"    id="p2RedFoul"    class="list-group-item" style="background-color: red;    height:13vh;">0</a>
+              <a href="#" onclick="blackFoul(2)"  id="p2BlackFoul"  class="list-group-item" style="background-color: black;  height:13vh;">0</a>
             </ul>
           </div>
         </div>
@@ -217,6 +218,9 @@
     // $("#container").find("span").css("font-size",currentFontSize-1); 
     // }
 
+
+
+
     // Start of ScoreKeeping Code
     var playerOneScore=00
     var playerTwoScore=00
@@ -230,6 +234,13 @@
           document.getElementById('p1score').innerHTML= playerOneScore;
         }
         suddenDeathCheck()
+        winCheck()
+
+        if (amount < 0) {
+          if (playerOneScore < 10) {
+            undoSuddenDeath();
+          }
+        }
     }
     function p2Plus(amount) {
         playerTwoScore+= amount;
@@ -241,13 +252,22 @@
           document.getElementById('p2score').innerHTML= playerTwoScore;
         }
         suddenDeathCheck()
+        winCheck()
+
+        if (amount < 0) {
+          if (playerTwoScore < 10) {
+            undoSuddenDeath();
+          }
+        }
     }
     function winCheck() {
       if (playerOneScore >= 15) {
-        alert("Player One Wins!")
+        document.getElementById("stop").click();
+
       }
       if (playerTwoScore >= 15) {
-        alert("Player Two Wins")
+        document.getElementById("stop").click();
+
       }
     }
     function suddenDeathCheck() {
@@ -312,20 +332,81 @@
           document.getElementById("gsLogo").style.display="block";
           document.getElementById("SuddenDeath").style.display="none";
     }
-
     function alerthehe() {
       alert("yippee!");
     }
 
     // End of ScoreKeeping Code
  
+
+  
+   
+    
+    // Start of Foul Code
+    var p1white = 0;
+    var p1yellow = 0;
+    var p1red = 0;
+    var p1black = 0;
+
+    var p2white = 0;
+    var p2yellow = 0;
+    var p2red = 0;
+    var p2black = 0;
+
+    function whiteFoul(playerNumber) { // white ?
+      if (playerNumber == 1) {
+        p1white++;
+        document.getElementById('p1WhiteFoul').innerHTML= p1white;
+      }
+      else if (playerNumber == 2) {
+        p2white++;
+        document.getElementById('p2WhiteFoul').innerHTML= p2white;
+      }
+    }
+    function yellowFoul(playerNumber) { // Yellow +3 opp
+      if (playerNumber == 1) {
+        p1yellow++;
+        document.getElementById('p1YellowFoul').innerHTML= p1yellow;
+        p2Plus(3)
+      }
+      else if (playerNumber == 2) {
+        p2yellow++;
+        document.getElementById('p2YellowFoul').innerHTML= p2yellow;
+        p1Plus(3)
+      }
+    }
+    function redFoul(playerNumber) { // Red +5 opp
+      if (playerNumber == 1) {
+        p1red++;
+        document.getElementById('p1RedFoul').innerHTML= p1red;
+        p2Plus(5)
+      }
+      else if (playerNumber == 2) {
+        p2red++;
+        document.getElementById('p2RedFoul').innerHTML= p2red;
+        p1Plus(5)
+      }
+    }
+    function blackFoul(playerNumber) { // black should ask for confirmation and then just end the game
+      if (playerNumber == 1) {
+        p1black++;
+        document.getElementById('p1BlackFoul').innerHTML= p1black;
+        document.getElementById("reset").click();
+      }
+      else if (playerNumber == 2) {
+        p2black++;
+        document.getElementById('p2BlackFoul').innerHTML= p2black;
+        document.getElementById("reset").click();
+      }
+    }
+    // End of Foul Code
+
     // Timer Code
   
   var mins =3;
   var seconds =0;
   $('#start').click(function(){
     startTimer();
-
   });
 
   $('#stop').click(function(){
@@ -346,6 +427,8 @@
       seconds =0;
       playerOneScore = 0;
       playerTwoScore = 0;
+
+      p1black = 0;
 
       
     $('#mins').html('3:');
