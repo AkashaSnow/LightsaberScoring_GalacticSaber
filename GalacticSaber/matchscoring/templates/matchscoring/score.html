@@ -85,7 +85,7 @@
     .plusMinusButton {
       padding: 0;
       vertical-align: center;
-      height: 15vh;
+      height: 15%;
       width: 9vw;
       margin-bottom: 3vh;
       background-color:#666666;
@@ -124,9 +124,10 @@
   
     <div class="column" id="column">
       <h2 class="playerTag">Player One</h2>
-      <button type="button" id="p1-" onclick="p1Plus(-1)" class="btn btn-primary plusMinusButton">-</button>
-      <button type="button" id="p1+" onclick="p1Plus(1)" class="btn btn-primary plusMinusButton">+</button>
-      
+      <div style="text-align: center;">
+        <button type="button" id="p1-" onclick="p1Plus(-1)" class="btn btn-primary plusMinusButton" style="background-color:#666666; color:#ffffff; border-color:black; font-family: Impact; font-size:11vh; display:inline-block;">-</button>
+        <button type="button" id="p1+" onclick="p1Plus(1)" class="btn btn-primary plusMinusButton" style="background-color:#666666; color:#ffffff; border-color:black; font-family: Impact; font-size:11vh; display:inline-block;">+</button>
+      </div>
       <!-- heres the foul code -->
       <div class="dropup" style="width:100%; height: 64vh; position:relative; bottom: 1vh;">
         <div class="panel" id="fouls" data-toggle="collapse" href="#collapse2" style="background-color:#7e3e98;">
