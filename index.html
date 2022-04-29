@@ -220,8 +220,8 @@
     // }
 
     // Start of ScoreKeeping Code
-    var playerOneScore=00;
-    var playerTwoScore=00;
+    var playerOneScore=00
+    var playerTwoScore=00
     function p1Plus(amount) {
         playerOneScore+= amount;
         // if/else here helps to always keep the display two digits,
@@ -348,85 +348,53 @@
     function whiteFoul(playerNumber) { // white ?
       if (playerNumber == 1) {
         p1white++;
-        if (p1white % 2 == 0) { // too white :( yellow
-          p1white-=2;
-          yellowFoul(playerNumber);
-        }
         document.getElementById('p1WhiteFoul').innerHTML= p1white;
       }
       else if (playerNumber == 2) {
         p2white++;
-        if (p2white % 2 == 0) { // too white :( yellow
-          p2white-=2;
-          yellowFoul(playerNumber);
-        }
         document.getElementById('p2WhiteFoul').innerHTML= p2white;
       }
-
     }
     function yellowFoul(playerNumber) { // Yellow +3 opp
       if (playerNumber == 1) {
         p1yellow++;
-        if (p1yellow % 2 == 0) {
-          p1yellow-=2;
-          redFoul(playerNumber)
-        }
-        else if (p1yellow % 2 == 1) {
-          p2Plus(3)
-        }
         document.getElementById('p1YellowFoul').innerHTML= p1yellow;
+        p2Plus(3)
       }
       else if (playerNumber == 2) {
         p2yellow++;
-        if (p2yellow % 2 == 0) {
-          p2yellow-=2;
-          redFoul(playerNumber)
-        }
-        else if (p2yellow % 2 == 1) {
-          p1Plus(3)
-        }
         document.getElementById('p2YellowFoul').innerHTML= p2yellow;
+        p1Plus(3)
       }
     }
     function redFoul(playerNumber) { // Red +5 opp
       if (playerNumber == 1) {
         p1red++;
-        if (p1red % 2==0) {
-          p1red-=2;
-          blackFoul(playerNumber)
-        }
-        else if (p1red % 2 == 1) {
-          p2Plus(5)
-        }
         document.getElementById('p1RedFoul').innerHTML= p1red;
+        p2Plus(5)
       }
       else if (playerNumber == 2) {
         p2red++;
-        if (p2red % 2==0) {
-          p2red-=2;
-          blackFoul(playerNumber)
-        }
-        else if (p2red % 2 == 1) {
-          p1Plus(5)
-        }
         document.getElementById('p2RedFoul').innerHTML= p2red;
+        p1Plus(5)
       }
     }
     function blackFoul(playerNumber) { // black should ask for confirmation and then just end the game
       if (playerNumber == 1) {
         p1black++;
         document.getElementById('p1BlackFoul').innerHTML= p1black;
-        //reset()
+        reset()
       }
       else if (playerNumber == 2) {
         p2black++;
         document.getElementById('p2BlackFoul').innerHTML= p2black;
-        //reset()
+        reset()
       }
     }
     // End of Foul Code
 
     // Timer Code
+  
   var mins =3;
   var seconds =0;
 
@@ -452,36 +420,18 @@
     clearTimeout(timex);
     clearTimeout(timex);
     
-      mins = 3;      
-      seconds = 0;
+      mins =3;      
+      seconds =0;
       playerOneScore = 0;
       playerTwoScore = 0;
 
-      p1white = 0;
-      p1yellow = 0;
-      p1red = 0;
       p1black = 0;
-
-      p2white = 0;
-      p2yellow = 0;
-      p2red = 0;
-      p2black = 0;
 
       
     $('#mins').html('3:');
     $('#seconds').html('00');
     $('#p1score').html('00');
     $('#p2score').html('00');
-
-    $('#p1WhiteFoul').html('0');
-    $('#p1YellowFoul').html('0');
-    $('#p1RedFoul').html('0');
-    $('#p1BlackFoul').html('0');
-
-    $('#p2WhiteFoul').html('0');
-    $('#p2YellowFoul').html('0');
-    $('#p2RedFoul').html('0');
-    $('#p2BlackFoul').html('0');
 
     undoSuddenDeath();
   }
@@ -522,6 +472,6 @@
   }
 
   </script>
-
+  
 </body>
 </html>
