@@ -349,10 +349,12 @@
       if (playerNumber == 1) {
         p1white++;
         document.getElementById('p1WhiteFoul').innerHTML= p1white;
+
       }
       else if (playerNumber == 2) {
         p2white++;
         document.getElementById('p2WhiteFoul').innerHTML= p2white;
+
       }
     }
     function yellowFoul(playerNumber) { // Yellow +3 opp
@@ -425,7 +427,15 @@
       playerOneScore = 0;
       playerTwoScore = 0;
 
+      p1white = 0;
+      p1yellow = 0;
+      p1red = 0;
       p1black = 0;
+
+      p2white = 0;
+      p2yellow = 0;
+      p2red = 0;
+      p2black =
 
       
     $('#mins').html('3:');
@@ -472,6 +482,6 @@
   }
 
   </script>
-  
+
 </body>
 </html>
