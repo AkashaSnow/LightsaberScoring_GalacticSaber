@@ -3,7 +3,7 @@
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <link rel="stylesheet" href="style.css" type="text/css">
+  <link rel="stylesheet" href="style.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   
@@ -110,6 +110,7 @@
       background-color: #66307b;
     }
 
+
   </style>
 </head>
 <body>
@@ -128,19 +129,19 @@
         <button type="button" id="p1+" onclick="p1Plus(1)" class="btn btn-primary plusMinusButton" style="background-color:#666666; color:#ffffff; border-color:black; font-family: Impact; font-size:11vh; display:inline-block;">+</button>
       </div>
       <!-- heres the foul code -->
-      <div class="dropup" style="width:100%; height: 64vh; position:relative; bottom: 1vh;">
+      <div class="dropup" style="width:100%; height: 62vh; position:relative; bottom: 1vh;">
         <div class="panel" id="fouls" data-toggle="collapse" href="#collapse2" style="background-color:#7e3e98;">
-          <div id="sillyFoulBox" class="panel-heading">
+          <div id="sillyFoulBox" onclick="stop()" class="panel-heading">
             <h4 class="panel-title" style="text-align: center;">
               <p class="text" id="foulsText" style="font-family: Comic Sans MS; font-size: 3vw; top:4px; position:relative; color: black;">Fouls</p>
             </h4>
           </div>
           <div id="collapse2" class="panel-collapse collapse">
             <ul class="list-group">
-              <a href="#" class="list-group-item" style="background-color: white; height:13vh;"></a>
-              <a href="#" class="list-group-item" style="background-color: yellow; height:13vh;"></a>
-              <a href="#" class="list-group-item" style="background-color: red; height:13vh;"></a>
-              <a href="#" class="list-group-item" style="background-color: black; height:13vh;"></a>
+              <a href="#" onclick="whiteFoul(1)" id="p1WhiteFoul" class="list-group-item" style="background-color: white; height:13vh; text-align: right;">0</a>
+              <a href="#" onclick="yellowFoul(1)" id="p1YellowFoul" class="list-group-item" style="background-color: yellow; height:13vh; text-align: right;">0</a>
+              <a href="#" onclick="redFoul(1)" id="p1RedFoul" class="list-group-item" style="background-color: red; height:13vh; text-align: right;">0</a>
+              <a href="#" onclick="blackFoul(1)" id="p1BlackFoul" class="list-group-item" style="background-color: black; height:13vh; text-align: right;">0</a>
             </ul>
           </div>
         </div>
@@ -153,8 +154,8 @@
       <!-- Timer Code Goes Here -->
         <div style="width: 100%; height:40vh; background-color: #000000; position: relative; top: 0px">
           <div style="text-align: center;">
-            <button id="start" class="btn btn-primary timerButton" style="background-color: #b7b7b7; color:#7e3e98; border-color:black; font-family: Impact; text-align: center; padding: 3px; vertical-align:middle; display:inline-block;">▶</button>
-            <button id="stop" type="button" class="btn btn-primary timerButton" style="background-color: #b7b7b7; color:#7e3e98; border-color:black; font-family: Impact; font-weight:bolder; text-align: center; padding: 5px; vertical-align:middle; display:inline-block;">l l</button>
+            <button id="start" onclick="start()" class="btn btn-primary timerButton" style="background-color: #b7b7b7; color:#7e3e98; border-color:black; font-family: Impact; text-align: center; padding: 3px; vertical-align:middle; display:inline-block;">▶</button>
+            <button id="stop" onclick="stop()" type="button" class="btn btn-primary timerButton" disabled="true" style="background-color: #b7b7b7; color:#7e3e98; border-color:black; font-family: Impact; font-weight:bolder; text-align: center; padding: 5px; vertical-align:middle; display:inline-block;">l l</button>
             <div style="text-align: center;">
               <span><h3 id="mins" style="font-family: Impact; font-size: 18vh; color:#7e3e98; display:inline-block;">3:</h3></span>
               <span><h3 id="seconds" style="font-family: Impact; font-size: 18vh; color:#7e3e98; display:inline-block;">00</h3></span>
@@ -165,7 +166,7 @@
       <img src="\static\matchscoring\images\GSLogo.png" alt="gsLogo" id="gsLogo" style="position: relative; top:5%; border-style: solid; border-color: white; width: 25vw; height: 40vh;">
       <h1 id="SuddenDeath" class="suddenDeathText" style="display: none; font-family: Impact; font-size:7vw; text-align:center; position:relative; top:5%;">SUDDEN <br> DEATH</h1>
 
-      <button type="reset" id="reset" class="btn btn-primary" style="position: relative; bottom: -6vh; left:6.5vw; width:48%; height: 14%; background-color:#666666; border-color:black; font-family: Impact; font-size: 7vh;">End</button>
+      <button type="reset" id="reset" onclick="reset()" class="btn btn-primary" style="position: relative; bottom: -6vh; left:6.5vw; width:48%; height: 14%; background-color:#666666; border-color:black; font-family: Impact; font-size: 7vh;">End</button>
     </div>
 
     <div class="column" id="column2" style="background-color:#4D578E;">
@@ -179,19 +180,19 @@
       </div>
       
       <!-- heres the foul code -->
-      <div class="dropup" style=" width:100%; height: 64vh; position:relative; bottom: 1vh;">
+      <div class="dropup" style=" width:100%; height: 62vh; position:relative; bottom: 1vh;">
         <div class="panel" id="fouls2" data-toggle="collapse" href="#collapse1" style="background-color:#7e3e98;">
-          <div id="sillyFoulBox" class="panel-heading">
+          <div id="sillyFoulBox" onclick="stop()" class="panel-heading">
             <h4 class="panel-title" style="text-align: center;">
               <p class="text" id="fouls2Text" style="font-family: Comic Sans MS; font-size: 3vw; top:4px; position:relative; color: black;">Fouls</p>
             </h4>
           </div> 
           <div id="collapse1" class="panel-collapse collapse">
             <ul class="list-group">
-              <a href="#" class="list-group-item" style="background-color: white; height:13vh;"></a>
-              <a href="#" class="list-group-item" style="background-color: yellow; height:13vh;"></a>
-              <a href="#" class="list-group-item" style="background-color: red; height:13vh;"></a>
-              <a href="#" class="list-group-item" style="background-color: black; height:13vh;"></a>
+              <a href="#" onclick="whiteFoul(2)"  id="p2WhiteFoul"  class="list-group-item" style="background-color: white;  height:13vh;">0</a>
+              <a href="#" onclick="yellowFoul(2)" id="p2YellowFoul" class="list-group-item" style="background-color: yellow; height:13vh;">0</a>
+              <a href="#" onclick="redFoul(2)"    id="p2RedFoul"    class="list-group-item" style="background-color: red;    height:13vh;">0</a>
+              <a href="#" onclick="blackFoul(2)"  id="p2BlackFoul"  class="list-group-item" style="background-color: black;  height:13vh;">0</a>
             </ul>
           </div>
         </div>
@@ -231,6 +232,13 @@
           document.getElementById('p1score').innerHTML= playerOneScore;
         }
         suddenDeathCheck()
+        winCheck()
+
+        if (amount < 0) {
+          if (playerOneScore < 10) {
+            undoSuddenDeath();
+          }
+        }
     }
     function p2Plus(amount) {
         playerTwoScore+= amount;
@@ -242,13 +250,20 @@
           document.getElementById('p2score').innerHTML= playerTwoScore;
         }
         suddenDeathCheck()
+        winCheck()
+
+        if (amount < 0) {
+          if (playerTwoScore < 10) {
+            undoSuddenDeath();
+          }
+        }
     }
     function winCheck() {
       if (playerOneScore >= 15) {
-        alert("Player One Wins!")
+        stop()
       }
       if (playerTwoScore >= 15) {
-        alert("Player Two Wins")
+        stop()
       }
     }
     function suddenDeathCheck() {
@@ -313,30 +328,92 @@
           document.getElementById("gsLogo").style.display="block";
           document.getElementById("SuddenDeath").style.display="none";
     }
-
     function alerthehe() {
       alert("yippee!");
     }
 
     // End of ScoreKeeping Code
  
+    // Start of Foul Code
+    var p1white = 0;
+    var p1yellow = 0;
+    var p1red = 0;
+    var p1black = 0;
+
+    var p2white = 0;
+    var p2yellow = 0;
+    var p2red = 0;
+    var p2black = 0;
+
+    function whiteFoul(playerNumber) { // white ?
+      if (playerNumber == 1) {
+        p1white++;
+        document.getElementById('p1WhiteFoul').innerHTML= p1white;
+      }
+      else if (playerNumber == 2) {
+        p2white++;
+        document.getElementById('p2WhiteFoul').innerHTML= p2white;
+      }
+    }
+    function yellowFoul(playerNumber) { // Yellow +3 opp
+      if (playerNumber == 1) {
+        p1yellow++;
+        document.getElementById('p1YellowFoul').innerHTML= p1yellow;
+        p2Plus(3)
+      }
+      else if (playerNumber == 2) {
+        p2yellow++;
+        document.getElementById('p2YellowFoul').innerHTML= p2yellow;
+        p1Plus(3)
+      }
+    }
+    function redFoul(playerNumber) { // Red +5 opp
+      if (playerNumber == 1) {
+        p1red++;
+        document.getElementById('p1RedFoul').innerHTML= p1red;
+        p2Plus(5)
+      }
+      else if (playerNumber == 2) {
+        p2red++;
+        document.getElementById('p2RedFoul').innerHTML= p2red;
+        p1Plus(5)
+      }
+    }
+    function blackFoul(playerNumber) { // black should ask for confirmation and then just end the game
+      if (playerNumber == 1) {
+        p1black++;
+        document.getElementById('p1BlackFoul').innerHTML= p1black;
+        reset()
+      }
+      else if (playerNumber == 2) {
+        p2black++;
+        document.getElementById('p2BlackFoul').innerHTML= p2black;
+        reset()
+      }
+    }
+    // End of Foul Code
+
     // Timer Code
   
   var mins =3;
   var seconds =0;
-  $('#start').click(function(){
+
+  function start() {
     startTimer();
+    document.getElementById('stop').disabled=false;
 
-  });
+  }
 
-  $('#stop').click(function(){
+  function stop() {
     document.getElementById('start').disabled=false;
-        clearTimeout(timex);
-        clearTimeout(timex);
-        clearTimeout(timex);
-  });
+    document.getElementById('stop').disabled=true;
+
+    clearTimeout(timex);
+    clearTimeout(timex);
+    clearTimeout(timex);
+  }
   
-  $('#reset').click(function(){
+  function reset() {
     document.getElementById('start').disabled=false;
     
     clearTimeout(timex);
@@ -348,6 +425,8 @@
       playerOneScore = 0;
       playerTwoScore = 0;
 
+      p1black = 0;
+
       
     $('#mins').html('3:');
     $('#seconds').html('00');
@@ -355,8 +434,7 @@
     $('#p2score').html('00');
 
     undoSuddenDeath();
-
-  });
+  }
 
   // everytime this function runs: seconds goes down by one, then it calls itself again
   function startTimer(){ 
@@ -393,7 +471,6 @@
     },1000); // delay between calling itself again
   }
 
-  
   </script>
   
 </body>
