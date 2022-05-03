@@ -107,6 +107,14 @@
       width: 10vw;
       font-size: 6vh;
     }
+    .confirmDenyButton {
+      background-color:black; 
+      color:white; 
+      border-color:black;
+      height: 50px;
+      width:100px;
+      font-size: 20px;
+    }
     .foul{
       font-size: 4vh;
     }
@@ -202,6 +210,8 @@
               <p>Unwarranted complaint.</p>
               <p>Refusal to comply.</p>
               <p>Involuntary exit from the arena.</p>
+              <button type="button" id="confirm" onclick="whiteFoul(1); document.getElementById('white1Modal').style.display='none';" class="btn btn-primary confirmDenyButton">Confirm</button>
+              <button type="button" id="deny" onclick="document.getElementById('white1Modal').style.display='none';" class="btn btn-primary confirmDenyButton">Deny</button>
             </div>
           </div>
           <div id="yellow1Modal" class="modal">
@@ -217,6 +227,8 @@
               <p>Touch landed with excessive force, or during or after a fall.</p>
               <p>Voluntary exit from the arena.</p>
               <p>Using the non-sword hand or arm.</p>
+              <button type="button" id="confirm" onclick="yellowFoul(1); document.getElementById('yellow1Modal').style.display='none';" class="btn btn-primary confirmDenyButton">Confirm</button>
+              <button type="button" id="deny" onclick="document.getElementById('yellow1Modal').style.display='none';" class="btn btn-primary confirmDenyButton">Deny</button>
             </div>
           </div>
           <div id="red1Modal" class="modal">
@@ -228,8 +240,10 @@
               <p><br>Unsportsmanlike behavior during combat.</p>
               <p>Combatant disrupting order in the sparring area.</p>
               <p>Starting the combat before the “Fight!” command given by the referee.</p>
-              <p>Keeping on fighting aSer the “Halt!” command given by the referee.</p>
+              <p>Keeping on fighting after the “Halt!” command given by the referee.</p>
               <p>Disruption of order in the sparring area by any individual.</p>
+              <button type="button" id="confirm" onclick="redFoul(1); document.getElementById('red1Modal').style.display='none';" class="btn btn-primary confirmDenyButton" style="background-color: white; color:black; border-color: white;">Confirm</button>
+              <button type="button" id="deny" onclick="document.getElementById('red1Modal').style.display='none';" class="btn btn-primary confirmDenyButton"style="background-color: white; color:black; border-color: white;">Deny</button>
             </div>
           </div>
           <div id="black1Modal" class="modal">
@@ -242,6 +256,8 @@
               <p>Offense against the spirit of fair play and sportsmanship.</p>
               <p>Fixing the outcome of a combat, losing intentionally, and/or gaining benefits from such collusion.</p>
               <p>Refusal to spar against any officially registered combatant.</p>
+              <button type="button" id="confirm" onclick="blackFoul(1); document.getElementById('black1Modal').style.display='none';" class="btn btn-primary confirmDenyButton" style="background-color: white; color:black; border-color: white;">Confirm</button>
+              <button type="button" id="deny" onclick="document.getElementById('black1Modal').style.display='none';" class="btn btn-primary confirmDenyButton"style="background-color: white; color:black; border-color: white;">Deny</button>
             </div>
           </div>
         </div>
@@ -312,6 +328,8 @@
               <p>Unwarranted complaint.</p>
               <p>Refusal to comply.</p>
               <p>Involuntary exit from the arena.</p>
+              <button type="button" id="confirm" onclick="whiteFoul(2); document.getElementById('white2Modal').style.display='none';" class="btn btn-primary confirmDenyButton">Confirm</button>
+              <button type="button" id="deny" onclick="document.getElementById('white2Modal').style.display='none';" class="btn btn-primary confirmDenyButton">Deny</button>
             </div>
           </div>
           <div id="yellow2Modal" class="modal">
@@ -327,6 +345,8 @@
               <p>Touch landed with excessive force, or during or after a fall.</p>
               <p>Voluntary exit from the arena.</p>
               <p>Using the non-sword hand or arm.</p>
+              <button type="button" id="confirm" onclick="yellowFoul(2); document.getElementById('yellow2Modal').style.display='none';" class="btn btn-primary confirmDenyButton">Confirm</button>
+              <button type="button" id="deny" onclick="document.getElementById('yellow2Modal').style.display='none';" class="btn btn-primary confirmDenyButton">Deny</button>
             </div>
           </div>
           <div id="red2Modal" class="modal">
@@ -340,6 +360,8 @@
               <p>Starting the combat before the “Fight!” command given by the referee.</p>
               <p>Keeping on fighting aSer the “Halt!” command given by the referee.</p>
               <p>Disruption of order in the sparring area by any individual.</p>
+              <button type="button" id="confirm" onclick="redFoul(2); document.getElementById('red2Modal').style.display='none';" class="btn btn-primary confirmDenyButton" style="background-color: white; color:black; border-color: white;">Confirm</button>
+              <button type="button" id="deny" onclick="document.getElementById('red2Modal').style.display='none';" class="btn btn-primary confirmDenyButton"style="background-color: white; color:black; border-color: white;">Deny</button>
             </div>
           </div>
           <div id="black2Modal" class="modal">
@@ -352,6 +374,8 @@
               <p>Offense against the spirit of fair play and sportsmanship.</p>
               <p>Fixing the outcome of a combat, losing intentionally, and/or gaining benefits from such collusion.</p>
               <p>Refusal to spar against any officially registered combatant.</p>
+              <button type="button" id="confirm" onclick="blackFoul(2); document.getElementById('black2Modal').style.display='none';" class="btn btn-primary confirmDenyButton" style="background-color: white; color:black; border-color: white;">Confirm</button>
+              <button type="button" id="deny" onclick="document.getElementById('black2Modal').style.display='none';" class="btn btn-primary confirmDenyButton"style="background-color: white; color:black; border-color: white;">Deny</button>
             </div>
           </div>
         </div>
