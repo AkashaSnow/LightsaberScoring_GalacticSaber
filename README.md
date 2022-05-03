@@ -1,2 +1,2 @@
-# LightsaberScoring_GalacticSaber
-index.html
+LightsaberScoring_GalacticSaber
+
