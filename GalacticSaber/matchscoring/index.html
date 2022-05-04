@@ -159,6 +159,10 @@
       cursor: pointer;
     }
 
+    .modal-button {
+      border-style: none;
+    }
+
 
   </style>
 </head>
@@ -187,10 +191,10 @@
           </div>
           <div id="collapse2" class="panel-collapse collapse">
             <ul class="list-group">
-              <a href="#" onclick="whiteFoul(1)" id="p1WhiteFoul" class="list-group-item" style="background-color: white; height:13vh; text-align: right; font-size: 6vh;">0</a>
-              <a href="#" onclick="yellowFoul(1)" id="p1YellowFoul" class="list-group-item" style="background-color: yellow; height:13vh; text-align: right; font-size: 6vh;">0</a>
-              <a href="#" onclick="redFoul(1)" id="p1RedFoul" class="list-group-item" style="background-color: red; height:13vh; text-align: right; font-size: 6vh;">0</a>
-              <a href="#" onclick="blackFoul(1)" id="p1BlackFoul" class="list-group-item" style="background-color: black; height:13vh; text-align: right; font-size: 6vh;">0</a>
+              <a href="#" onclick="whiteFoul(1)" id="p1WhiteFoul" class="list-group-item modal-button" style="background-color: white; height:13vh; text-align: right; font-size: 6vh;">0</a>
+              <a href="#" onclick="yellowFoul(1)" id="p1YellowFoul" class="list-group-item modal-button" style="background-color: yellow; height:13vh; text-align: right; font-size: 6vh;">0</a>
+              <a href="#" onclick="redFoul(1)" id="p1RedFoul" class="list-group-item modal-button" style="background-color: red; height:13vh; text-align: right; font-size: 6vh;">0</a>
+              <a href="#" onclick="blackFoul(1)" id="p1BlackFoul" class="list-group-item modal-button" style="background-color: black; height:13vh; text-align: right; font-size: 6vh;">0</a>
             </ul>
           </div>
           <div id="white1Modal" class="modal">
@@ -282,7 +286,7 @@
       <img src="static/matchscoring/images/GSLogo.png" alt="gsLogo" id="gsLogo" style="position: relative; top:5%; border-style: solid; border-color: white; width: 25vw; height: 40vh;">
       <h1 id="SuddenDeath" class="suddenDeathText" style="display: none; font-family: Impact; font-size:6.5vw; text-align:center; position:relative; top:5%;">SUDDEN <br> DEATH</h1>
 
-      <button type="button" id="end" class="list-group-item" style="position: relative; bottom: -6vh; left:6.5vw; width:48%; height: 14%; background-color:#666666; border-color:black; font-family: Impact; font-size: 7vh;">End</button>
+      <button type="button" id="end" class="btn btn-primary modal-button" style="position: relative; bottom: -6vh; left:6.5vw; width:48%; height: 14%; background-color:#666666; border-color:black; font-family: Impact; font-size: 7vh;">End</button>
       <div id="summaryModal" class="modal">
         <!-- Modal content -->
         <div class="modal-content" style="background-color:black; color:white; text-align: center;">
@@ -313,10 +317,10 @@
           </div> 
           <div id="collapse1" class="panel-collapse collapse">
             <ul class="list-group">
-              <a href="#" onclick="whiteFoul(2)"  id="p2WhiteFoul"  class="list-group-item" style="background-color: white;  height:13vh; font-size: 6vh;">0</a>
-              <a href="#" onclick="yellowFoul(2)" id="p2YellowFoul" class="list-group-item" style="background-color: yellow; height:13vh; font-size: 6vh;">0</a>
-              <a href="#" onclick="redFoul(2)"    id="p2RedFoul"    class="list-group-item" style="background-color: red;    height:13vh; font-size: 6vh;">0</a>
-              <a href="#" onclick="blackFoul(2)"  id="p2BlackFoul"  class="list-group-item" style="background-color: black;  height:13vh; font-size: 6vh;">0</a>
+              <a href="#" onclick="whiteFoul(2)"  id="p2WhiteFoul"  class="list-group-item modal-button" style="background-color: white;  height:13vh; font-size: 6vh;">0</a>
+              <a href="#" onclick="yellowFoul(2)" id="p2YellowFoul" class="list-group-item modal-button" style="background-color: yellow; height:13vh; font-size: 6vh;">0</a>
+              <a href="#" onclick="redFoul(2)"    id="p2RedFoul"    class="list-group-item modal-button" style="background-color: red;    height:13vh; font-size: 6vh;">0</a>
+              <a href="#" onclick="blackFoul(2)"  id="p2BlackFoul"  class="list-group-item modal-button" style="background-color: black;  height:13vh; font-size: 6vh;">0</a>
             </ul>
           </div>
           <div id="white2Modal" class="modal">
@@ -621,7 +625,7 @@
     var modal = document.getElementsByClassName('modal');
 
     // Get the button that opens the modal
-    var btn = document.getElementsByClassName("list-group-item");
+    var btn = document.getElementsByClassName("modal-button");
 
 
     // Get the <span> element that closes the modal
