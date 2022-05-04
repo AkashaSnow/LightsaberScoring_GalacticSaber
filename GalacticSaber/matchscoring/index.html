@@ -282,7 +282,7 @@
       <img src="static/matchscoring/images/GSLogo.png" alt="gsLogo" id="gsLogo" style="position: relative; top:5%; border-style: solid; border-color: white; width: 25vw; height: 40vh;">
       <h1 id="SuddenDeath" class="suddenDeathText" style="display: none; font-family: Impact; font-size:6.5vw; text-align:center; position:relative; top:5%;">SUDDEN <br> DEATH</h1>
 
-      <button type="button" id="end" class="btn btn-primary" style="position: relative; bottom: -6vh; left:6.5vw; width:48%; height: 14%; background-color:#666666; border-color:black; font-family: Impact; font-size: 7vh;">End</button>
+      <button type="button" id="end" onclick="summaryModal" class="btn btn-primary" style="position: relative; bottom: -6vh; left:6.5vw; width:48%; height: 14%; background-color:#666666; border-color:black; font-family: Impact; font-size: 7vh;">End</button>
       <div id="summaryModal" class="modal">
         <!-- Modal content -->
         <div class="modal-content" style="background-color:black; color:white; text-align: center;">
@@ -642,8 +642,8 @@
         modal[3].style.display = "block";
     }
 
-    btn[end].onclick = function() {
-        modal[summaryModal].style.display = "block";
+    btn[4].onclick = function() {
+        modal[4].style.display = "block";
     }
 
     btn[5].onclick = function() {
@@ -678,8 +678,8 @@
         modal[3].style.display = "none";
     }
 
-    span[end].onclick = function() {
-        modal[summaryModal].style.display = "none";
+    span[4].onclick = function() {
+        modal[4].style.display = "none";
     }
 
     span[5].onclick = function() {
@@ -711,8 +711,8 @@
         if (event.target == modal[3]) {
             modal[3].style.display = "none";
         } 
-        if (event.target == modal[summaryModal]) {
-            modal[summaryModal].style.display = "none";
+        if (event.target == modal[4]) {
+            modal[4].style.display = "none";
         }
         if (event.target == modal[5]) {
             modal[5].style.display = "none";
