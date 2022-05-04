@@ -398,19 +398,21 @@
       <button type="button" id="p23" onclick="p2Plus(3)" class="btn btn-primary scoreButton">Arms or Legs</button>
       <button type="button" id="p21" onclick="p2Plus(1)" class="btn btn-primary scoreButton">Hands or Hilt </button>
     </div>
-
-    </div>
+    
   </div>
-  <script>
-    // var fontize = $("#title").css("font-size");
+</div>
+<script>
+  // var fontize = $("#title").css("font-size");
     // var i = 0/*remove unit from integer*/
     // while($("#container").find("span").width() > $("#container").width()) {
-    // var currentFontSize = parseInt($("#container").find("span").css("font-size")); 
-    // $("#container").find("span").css("font-size",currentFontSize-1); 
-    // }
-
-    // Start of ScoreKeeping Code
-    var playerOneScore=00;
+      // var currentFontSize = parseInt($("#container").find("span").css("font-size")); 
+      // $("#container").find("span").css("font-size",currentFontSize-1); 
+      // }
+      
+      var mins =3;
+      var seconds =0;
+      // Start of ScoreKeeping Code
+      var playerOneScore=00;
     var playerTwoScore=00;
     function p1Plus(amount) {
         playerOneScore+= amount;
@@ -730,8 +732,6 @@
     // End of Foul Code
 
     // Timer Code
-  var mins =3;
-  var seconds =0;
 
   function start() {
     startTimer();
