@@ -172,7 +172,7 @@
     </div>
   
     <div class="column" id="column">
-      <h2 class="playerTag">Player One</h2>
+      <h2 class="playerTag" style="height: 10vh; font-size: 6vh;">Player One</h2>
       <div style="text-align: center;">
         <button type="button" id="p1-" onclick="p1Plus(-1)" class="btn btn-primary plusMinusButton" style="background-color:#666666; color:#ffffff; border-color:black; font-family: Impact; font-size:11vh; display:inline-block;">-</button>
         <button type="button" id="p1+" onclick="p1Plus(1)" class="btn btn-primary plusMinusButton" style="background-color:#666666; color:#ffffff; border-color:black; font-family: Impact; font-size:11vh; display:inline-block;">+</button>
@@ -390,7 +390,7 @@
       <button type="button" id="p23" onclick="p2Plus(3)" class="btn btn-primary scoreButton">Arms or Legs</button>
       <button type="button" id="p21" onclick="p2Plus(1)" class="btn btn-primary scoreButton">Hands or Hilt </button>
     </div>
-
+    
     </div>
   </div>
   <script>
@@ -400,13 +400,15 @@
     // var currentFontSize = parseInt($("#container").find("span").css("font-size")); 
     // $("#container").find("span").css("font-size",currentFontSize-1); 
     // }
-
+    
+    var mins =3;
+    var seconds =0;
     // Start of ScoreKeeping Code
     var playerOneScore=00;
     var playerTwoScore=00;
     function p1Plus(amount) {
-        playerOneScore+= amount;
-        // if/else here helps to always keep the display two digits,
+      playerOneScore+= amount;
+      // if/else here helps to always keep the display two digits,
         if ((playerOneScore < 10) && (playerOneScore >= 0)) {
           document.getElementById('p1score').innerHTML= "0" + playerOneScore;
         }
@@ -598,12 +600,12 @@
       if (playerNumber == 1) {
         p1black++;
         document.getElementById('p1BlackFoul').innerHTML= p1black;
-        //reset()
+        reset()
       }
       else if (playerNumber == 2) {
         p2black++;
         document.getElementById('p2BlackFoul').innerHTML= p2black;
-        //reset()
+        reset()
       }
     }
 
@@ -711,8 +713,6 @@
     // End of Foul Code
 
     // Timer Code
-  var mins =3;
-  var seconds =0;
 
   function start() {
     startTimer();
