@@ -282,7 +282,15 @@
       <img src="static/matchscoring/images/GSLogo.png" alt="gsLogo" id="gsLogo" style="position: relative; top:5%; border-style: solid; border-color: white; width: 25vw; height: 40vh;">
       <h1 id="SuddenDeath" class="suddenDeathText" style="display: none; font-family: Impact; font-size:6.5vw; text-align:center; position:relative; top:5%;">SUDDEN <br> DEATH</h1>
 
-      <button type="reset" id="reset" onclick="reset()" class="btn btn-primary" style="position: relative; bottom: -6vh; left:6.5vw; width:48%; height: 14%; background-color:#666666; border-color:black; font-family: Impact; font-size: 7vh;">End</button>
+      <button type="reset" id="end" onclick="reset()" class="btn btn-primary" style="position: relative; bottom: -6vh; left:6.5vw; width:48%; height: 14%; background-color:#666666; border-color:black; font-family: Impact; font-size: 7vh;">End</button>
+      <div id="end" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content" style="background-color:black; color:white; text-align: center;">
+          <span class="close" style="color:white;">&times;</span>
+          <h4>Summary Page</h4>
+          <button type="reset" id="reset" onclick="reset()" class="btn btn-primary" style="position: relative; bottom: -6vh; left:6.5vw; width:48%; height: 14%; background-color:#666666; border-color:black; font-family: Impact; font-size: 7vh;">New Match</button>
+        </div>
+      </div>
     </div>
 
     <div class="column" id="column2" style="background-color:#4D578E;">
@@ -649,6 +657,10 @@
     btn[7].onclick = function() {
         modal[7].style.display = "block";
     }
+
+    btn[8].onclick = function() {
+        modal[8].style.display = "block";
+    }
     // When the user clicks on <span> (x), close the modal
     span[0].onclick = function() {
         modal[0].style.display = "none";
@@ -681,6 +693,10 @@
     span[7].onclick = function() {
         modal[7].style.display = "none";
     }
+
+    span[8].onclick = function() {
+        modal[8].style.display = "none";
+    }
     // When the user clicks anywhere outside of the modal, close it
     window.onclick = function(event) {
         if (event.target == modal[0]) {
@@ -706,6 +722,9 @@
         }  
         if (event.target == modal[7]) {
             modal[7].style.display = "none";
+        }
+        if (event.target == modal[8]) {
+            modal[8].style.display = "none";
         }
     }
     // End of Foul Code
