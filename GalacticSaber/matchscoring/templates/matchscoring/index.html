@@ -121,7 +121,6 @@
     #sillyFoulBox:hover {
       background-color: #66307b;
     }
-    
     .modal {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
@@ -157,7 +156,7 @@
       color: #000;
       text-decoration: none;
       cursor: pointer;
-    }
+    }    
 
 
   </style>
@@ -171,7 +170,7 @@
       <button type="button" id="p11" onclick="p1Plus(1)" class="btn btn-primary scoreButton">Hands or Hilt </button>
     </div>
   
-    <div class="column" id="column">
+    <div class="column" id="column" style="max-height: 100vh;">
       <h2 class="playerTag">Player One</h2>
       <div style="text-align: center;">
         <button type="button" id="p1-" onclick="p1Plus(-1)" class="btn btn-primary plusMinusButton" style="background-color:#666666; color:#ffffff; border-color:black; font-family: Impact; font-size:11vh; display:inline-block;">-</button>
@@ -187,10 +186,10 @@
           </div>
           <div id="collapse2" class="panel-collapse collapse">
             <ul class="list-group">
-              <a href="#" onclick="whiteFoul(1)" id="p1WhiteFoul" class="list-group-item" style="background-color: white; height:13vh; text-align: right; font-size: 6vh;">0</a>
-              <a href="#" onclick="yellowFoul(1)" id="p1YellowFoul" class="list-group-item" style="background-color: yellow; height:13vh; text-align: right; font-size: 6vh;">0</a>
-              <a href="#" onclick="redFoul(1)" id="p1RedFoul" class="list-group-item" style="background-color: red; height:13vh; text-align: right; font-size: 6vh;">0</a>
-              <a href="#" onclick="blackFoul(1)" id="p1BlackFoul" class="list-group-item" style="background-color: black; height:13vh; text-align: right; font-size: 6vh;">0</a>
+              <a href="#" onclick="whiteFoul(1)"  id="p1WhiteFoul"  class="list-group-item foul" style="background-color: white;  text-align: right;">0</a>
+              <a href="#" onclick="yellowFoul(1)" id="p1YellowFoul" class="list-group-item foul" style="background-color: yellow; text-align: right;">0</a>
+              <a href="#" onclick="redFoul(1)"    id="p1RedFoul"    class="list-group-item foul" style="background-color: red;    text-align: right;">0</a>
+              <a href="#" onclick="blackFoul(1)"  id="p1BlackFoul"  class="list-group-item foul" style="background-color: black;  text-align: right;">0</a>
             </ul>
           </div>
           <div id="white1Modal" class="modal">
@@ -231,7 +230,7 @@
               <button type="button" id="deny" onclick="document.getElementById('yellow1Modal').style.display='none';" class="btn btn-primary confirmDenyButton">Deny</button>
             </div>
           </div>
-          <div id="red1Modal" class="modal">
+          <div id="red1Modal" class="modal" style="color: white;">
             <!-- Modal content -->
             <div class="modal-content" style="background-color: red; color: white; text-align: center;">
               <span class="close">&times;</span>
@@ -249,7 +248,7 @@
           <div id="black1Modal" class="modal">
             <!-- Modal content -->
             <div class="modal-content" style="background-color:black; color:white; text-align: center;">
-              <span class="close" style="color:white;">&times;</span>
+              <span class="close"  style="color:white;">&times;</span>
               <h4>Player 1 - Black</h4>
               <b>The offending party is excluded from the competion.</b>
               <p><br>Intentional brutality.</p>
@@ -305,10 +304,10 @@
           </div> 
           <div id="collapse1" class="panel-collapse collapse">
             <ul class="list-group">
-              <a href="#" onclick="whiteFoul(2)"  id="p2WhiteFoul"  class="list-group-item" style="background-color: white;  height:13vh; font-size: 6vh;">0</a>
-              <a href="#" onclick="yellowFoul(2)" id="p2YellowFoul" class="list-group-item" style="background-color: yellow; height:13vh; font-size: 6vh;">0</a>
-              <a href="#" onclick="redFoul(2)"    id="p2RedFoul"    class="list-group-item" style="background-color: red;    height:13vh; font-size: 6vh;">0</a>
-              <a href="#" onclick="blackFoul(2)"  id="p2BlackFoul"  class="list-group-item" style="background-color: black;  height:13vh; font-size: 6vh;">0</a>
+              <a href="#" onclick="whiteFoul(2)"  id="p2WhiteFoul"  class="list-group-item foul" style="background-color: white;" >0</a>
+              <a href="#" onclick="yellowFoul(2)" id="p2YellowFoul" class="list-group-item foul" style="background-color: yellow;">0</a>
+              <a href="#" onclick="redFoul(2)"    id="p2RedFoul"    class="list-group-item foul" style="background-color: red;"   >0</a>
+              <a href="#" onclick="blackFoul(2)"  id="p2BlackFoul"  class="list-group-item foul" style="background-color: black;" >0</a>
             </ul>
           </div>
           <div id="white2Modal" class="modal">
@@ -349,7 +348,7 @@
               <button type="button" id="deny" onclick="document.getElementById('yellow2Modal').style.display='none';" class="btn btn-primary confirmDenyButton">Deny</button>
             </div>
           </div>
-          <div id="red2Modal" class="modal">
+          <div id="red2Modal" class="modal" style="color: white;">
             <!-- Modal content -->
             <div class="modal-content" style="background-color:red; color: white; text-align: center;">
               <span class="close">&times;</span>
