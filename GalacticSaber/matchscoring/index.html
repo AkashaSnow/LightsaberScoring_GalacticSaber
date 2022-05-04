@@ -287,12 +287,13 @@
       <h1 id="SuddenDeath" class="suddenDeathText" style="display: none; font-family: Impact; font-size:6.5vw; text-align:center; position:relative; top:5%;">SUDDEN <br> DEATH</h1>
 
       <button type="button" id="end" class="btn btn-primary modal-button" style="position: relative; bottom: -6vh; left:6.5vw; width:48%; height: 14%; background-color:#666666; border-color:black; font-family: Impact; font-size: 7vh;">End</button>
+      
       <div id="summaryModal" class="modal">
         <!-- Modal content -->
         <div class="modal-content" style="background-color:black; color:white; text-align: center;">
           <span class="close" style="color:white;">&times;</span>
           <h4>Summary Page</h4>
-          <button type="reset" id="reset" onclick="reset()" class="btn btn-primary" style="position: relative; bottom: -6vh; left:6.5vw; width:48%; height: 14%; background-color:#666666; border-color:black; font-family: Impact; font-size: 7vh;">New Match</button>
+          <button type="reset" id="reset" onclick="reset(); document.getElementById('summaryModal').style.display='none';" class="btn btn-primary" style="position: relative; bottom: -6vh; left:6.5vw; width:48%; height: 14%; background-color:#666666; border-color:black; font-family: Impact; font-size: 7vh;">New Match</button>
         </div>
       </div>
     </div>
