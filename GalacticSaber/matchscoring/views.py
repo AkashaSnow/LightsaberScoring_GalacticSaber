@@ -11,7 +11,7 @@ from .models import Score, Timer
 
 class ScoreView(generic.ListView):
     model = Score
-    template_name = 'index.html'
+    name = 'index.html'
 
     
 
