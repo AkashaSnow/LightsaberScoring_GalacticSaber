@@ -125,7 +125,7 @@
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
-    padding-top: 100px; /* Location of the box */
+    padding-top: 0; /* Location of the box */
     left: 0;
     top: 0;
     width: 100%; /* Full width */
@@ -315,12 +315,12 @@
               </div>
             </div>
 
-            <div style="width: 100%; clear:both; text-align: left; font-family:Comic Sans MS; font-size:3.6vw; background-color: #7e3e98; padding-left:1.5vw;">
-              <h4 style="color:white; float:left;">Fouls</h4>
-              <h4 id= "p1summaryWhite" style="color: white; float:left;">0</h4>
-              <h4 id="p1summaryYellow" style="color: yellow; float:left;">0</h4>
-              <h4 id="p1summaryRed" style="color: red; float:left;">0</h4>
-              <h4 id="p1summaryBlack" style="color: black; float:left;">0</h4>
+            <div style="clear:both; text-align: left; font-family:Comic Sans MS;">
+              <h4 style="font-size:3.6vw; background-color: #7e3e98; color:white; float:left; padding-left:1.5vw; width:50%;">Fouls</h4>
+              <h4 id="p1summaryBlack" style="font-size:3.6vw; background-color: #7e3e98; color: black; float:right; padding-right:1.5vw;">0</h4>
+              <h4 id="p1summaryRed" style="font-size:3.6vw; background-color: #7e3e98; color: red; float:right; padding-right:1.5vw;">0</h4>
+              <h4 id="p1summaryYellow" style="font-size:3.6vw; background-color: #7e3e98; color: yellow; float:right; padding-right:1.5vw;">0</h4>
+              <h4 id= "p1summaryWhite" style="font-size:3.6vw; background-color: #7e3e98; color: white; float:right; padding-right:1.5vw;">0</h4>
             </div>
           </div>
 
@@ -358,12 +358,12 @@
               </div>
             </div>
 
-            <div style="width: 100%; clear:both; text-align: right; font-family:Comic Sans MS; padding-right:1.5vw;">
+            <div style="width: 100%; clear:both; text-align: right; font-family:Comic Sans MS;">
               <h4 style="font-size:3.6vw; background-color: #7e3e98; color:white; float:right;">Fouls</h4>
-              <h4 id= "p2summaryWhite" style="font-size:3.6vw; background-color: #7e3e98; color: white; float:right;">0</h4>
-              <h4 id="p2summaryYellow" style="font-size:3.6vw; background-color: #7e3e98; color: yellow; float:right;">0</h4>
-              <h4 id="p2summaryRed" style="font-size:3.6vw; background-color: #7e3e98; color: red; float:right;">0</h4>
-              <h4 id="p2summaryBlack" style="font-size:3.6vw; background-color: #7e3e98; color: black; float:right;">0</h4>
+              <h4 id= "p2summaryWhite" style="font-size:3.6vw; background-color: #7e3e98; color: white; float:right; padding-right:1.5vw;">0</h4>
+              <h4 id="p2summaryYellow" style="font-size:3.6vw; background-color: #7e3e98; color: yellow; float:right; padding-right:1.5vw;">0</h4>
+              <h4 id="p2summaryRed" style="font-size:3.6vw; background-color: #7e3e98; color: red; float:right; padding-right:1.5vw;">0</h4>
+              <h4 id="p2summaryBlack" style="font-size:3.6vw; background-color: #7e3e98; color: black; float:right; padding-right:1.5vw;">0</h4>
             </div>
           </div>
 
@@ -869,11 +869,17 @@
       p1yellow = 0;
       p1red = 0;
       p1black = 0;
+      p1headTorso = 0;
+      p1armsLegs = 0;
+      p1handsHilt = 0;
 
       p2white = 0;
       p2yellow = 0;
       p2red = 0;
       p2black = 0;
+      p2headTorso = 0;
+      p2armsLegs = 0;
+      p2handsHilt = 0;
 
       
     $('#mins').html('3:');
