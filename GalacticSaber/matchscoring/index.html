@@ -611,6 +611,28 @@
     }
 
     // End of ScoreKeeping Code
+
+    function summary() {
+      document.getElementById("p1handsHilt").innerHTML = p1handsHilt;
+      document.getElementById("p1armsLegs").innerHTML = p1armsLegs;
+      document.getElementById("p1headTorso").innerHTML = p1headTorso;
+      document.getElementById("p2handsHilt").innerHTML = p2handsHilt;
+      document.getElementById("p2armsLegs").innerHTML = p2armsLegs;
+      document.getElementById("p2headTorso").innerHTML = p2headTorso;
+
+      document.getElementById("p1summaryScore").innerHTML= playerOneScore;
+      document.getElementById("p2summaryScore").innerHTML= playerTwoScore;
+
+      document.getElementById("p1summaryWhite").innerHTML= p1white;
+      document.getElementById("p1summaryYellow").innerHTML= p1yellow;
+      document.getElementById("p1summaryRed").innerHTML= p1red;
+      document.getElementById("p1summaryBlack").innerHTML= p1black;
+
+      document.getElementById("p2summaryWhite").innerHTML= p2white;
+      document.getElementById("p2summaryYellow").innerHTML= p2yellow;
+      document.getElementById("p2summaryRed").innerHTML= p2red;
+      document.getElementById("p2summaryBlack").innerHTML= p2black;
+    }
  
     // Start of Foul Code
     var p1white = 0;
@@ -695,11 +717,13 @@
         p1black++;
         document.getElementById('p1BlackFoul').innerHTML= p1black;
         document.getElementById("summaryModal").style.display="block";
+        summary();
       }
       else if (playerNumber == 2) {
         p2black++;
         document.getElementById('p2BlackFoul').innerHTML= p2black;
         document.getElementById("summaryModal").style.display="block";
+        summary();
       }
     }
 
@@ -733,25 +757,26 @@
 
     btn[4].onclick = function() { // Summary Page
         modal[4].style.display = "block";
-        document.getElementById("p1handsHilt").innerHTML = p1handsHilt;
-        document.getElementById("p1armsLegs").innerHTML = p1armsLegs;
-        document.getElementById("p1headTorso").innerHTML = p1headTorso;
-        document.getElementById("p2handsHilt").innerHTML = p2handsHilt;
-        document.getElementById("p2armsLegs").innerHTML = p2armsLegs;
-        document.getElementById("p2headTorso").innerHTML = p2headTorso;
+        summary();
+        // document.getElementById("p1handsHilt").innerHTML = p1handsHilt;
+        // document.getElementById("p1armsLegs").innerHTML = p1armsLegs;
+        // document.getElementById("p1headTorso").innerHTML = p1headTorso;
+        // document.getElementById("p2handsHilt").innerHTML = p2handsHilt;
+        // document.getElementById("p2armsLegs").innerHTML = p2armsLegs;
+        // document.getElementById("p2headTorso").innerHTML = p2headTorso;
 
-        document.getElementById("p1summaryScore").innerHTML= playerOneScore;
-        document.getElementById("p2summaryScore").innerHTML= playerTwoScore;
+        // document.getElementById("p1summaryScore").innerHTML= playerOneScore;
+        // document.getElementById("p2summaryScore").innerHTML= playerTwoScore;
 
-        document.getElementById("p1summaryWhite").innerHTML= p1white;
-        document.getElementById("p1summaryYellow").innerHTML= p1yellow;
-        document.getElementById("p1summaryRed").innerHTML= p1red;
-        document.getElementById("p1summaryBlack").innerHTML= p1black;
+        // document.getElementById("p1summaryWhite").innerHTML= p1white;
+        // document.getElementById("p1summaryYellow").innerHTML= p1yellow;
+        // document.getElementById("p1summaryRed").innerHTML= p1red;
+        // document.getElementById("p1summaryBlack").innerHTML= p1black;
 
-        document.getElementById("p2summaryWhite").innerHTML= p2white;
-        document.getElementById("p2summaryYellow").innerHTML= p2yellow;
-        document.getElementById("p2summaryRed").innerHTML= p2red;
-        document.getElementById("p2summaryBlack").innerHTML= p2black;
+        // document.getElementById("p2summaryWhite").innerHTML= p2white;
+        // document.getElementById("p2summaryYellow").innerHTML= p2yellow;
+        // document.getElementById("p2summaryRed").innerHTML= p2red;
+        // document.getElementById("p2summaryBlack").innerHTML= p2black;
     }
 
     btn[5].onclick = function() { // 2White
