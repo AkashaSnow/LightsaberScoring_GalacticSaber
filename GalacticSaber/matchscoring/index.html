@@ -121,7 +121,6 @@
     #sillyFoulBox:hover {
       background-color: #66307b;
     }
-    
     .modal {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
@@ -143,7 +142,6 @@
     border: 1px solid #888;
     width: 80%;
    }
-
     /* The Close Button */
     .close {
       color: black;
@@ -151,14 +149,12 @@
       font-size: 50px;
       font-weight: bold;
     }
-
     .close:hover,
     .close:focus {
       color: #000;
       text-decoration: none;
       cursor: pointer;
     }
-
     .modal-button {
       border-style: none;
     }
@@ -191,10 +187,10 @@
           </div>
           <div id="collapse2" class="panel-collapse collapse">
             <ul class="list-group">
-              <a href="#" onclick="whiteFoul(1)" id="p1WhiteFoul" class="list-group-item modal-button" style="background-color: white; height:11vh; text-align: right; font-size: 6vh;">0</a>
+              <a href="#" onclick="whiteFoul(1)"  id="p1WhiteFoul"  class="list-group-item modal-button" style="background-color: white;  height:11vh; text-align: right; font-size: 6vh;">0</a>
               <a href="#" onclick="yellowFoul(1)" id="p1YellowFoul" class="list-group-item modal-button" style="background-color: yellow; height:11vh; text-align: right; font-size: 6vh;">0</a>
-              <a href="#" onclick="redFoul(1)" id="p1RedFoul" class="list-group-item modal-button" style="background-color: red; height:11vh; text-align: right; font-size: 6vh;">0</a>
-              <a href="#" onclick="blackFoul(1)" id="p1BlackFoul" class="list-group-item modal-button" style="background-color: black; height:11vh; text-align: right; font-size: 6vh;">0</a>
+              <a href="#" onclick="redFoul(1)"    id="p1RedFoul"    class="list-group-item modal-button" style="background-color: red;    height:11vh; text-align: right; font-size: 6vh;">0</a>
+              <a href="#" onclick="blackFoul(1)"  id="p1BlackFoul"  class="list-group-item modal-button" style="background-color: black;  height:11vh; text-align: right; font-size: 6vh;">0</a>
             </ul>
           </div>
           <div id="white1Modal" class="modal">
@@ -554,9 +550,6 @@
           document.getElementById("gsLogo").style.display="block";
           document.getElementById("SuddenDeath").style.display="none";
     }
-    function alerthehe() {
-      alert("yippee!");
-    }
 
     // End of ScoreKeeping Code
  
@@ -662,7 +655,7 @@
     var span = document.getElementsByClassName("close");
 
     // When the user clicks the button, open the modal 
-    btn[0].onclick = function() {
+    btn[0].onclick = function() { // 
         modal[0].style.display = "block";
     }
 
@@ -678,7 +671,7 @@
         modal[3].style.display = "block";
     }
 
-    btn[4].onclick = function() {
+    btn[4].onclick = function() { // Summary Page
         modal[4].style.display = "block";
     }
 
