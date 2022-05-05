@@ -187,10 +187,10 @@
           </div>
           <div id="collapse2" class="panel-collapse collapse">
             <ul class="list-group">
-              <a href="#" onclick="whiteFoul(1)"  id="p1WhiteFoul"  class="list-group-item modal-button" style="background-color: white;  height:11vh; text-align: right; font-size: 6vh;">0</a>
-              <a href="#" onclick="yellowFoul(1)" id="p1YellowFoul" class="list-group-item modal-button" style="background-color: yellow; height:11vh; text-align: right; font-size: 6vh;">0</a>
-              <a href="#" onclick="redFoul(1)"    id="p1RedFoul"    class="list-group-item modal-button" style="background-color: red;    height:11vh; text-align: right; font-size: 6vh;">0</a>
-              <a href="#" onclick="blackFoul(1)"  id="p1BlackFoul"  class="list-group-item modal-button" style="background-color: black;  height:11vh; text-align: right; font-size: 6vh;">0</a>
+              <a href="#" id="p1WhiteFoul"  class="list-group-item modal-button" style="background-color: white;  height:11vh; text-align: right; font-size: 6vh;">0</a>
+              <a href="#" id="p1YellowFoul" class="list-group-item modal-button" style="background-color: yellow; height:11vh; text-align: right; font-size: 6vh;">0</a>
+              <a href="#" id="p1RedFoul"    class="list-group-item modal-button" style="background-color: red;    height:11vh; text-align: right; font-size: 6vh;">0</a>
+              <a href="#" id="p1BlackFoul"  class="list-group-item modal-button" style="background-color: black;  height:11vh; text-align: right; font-size: 6vh;">0</a>
             </ul>
           </div>
           <div id="white1Modal" class="modal">
@@ -666,12 +666,12 @@
       if (playerNumber == 1) {
         p1black++;
         document.getElementById('p1BlackFoul').innerHTML= p1black;
-        reset()
+        document.getElementById("summaryModal").style.display="block";
       }
       else if (playerNumber == 2) {
         p2black++;
         document.getElementById('p2BlackFoul').innerHTML= p2black;
-        reset()
+        document.getElementById("summaryModal").style.display="block";
       }
     }
 
