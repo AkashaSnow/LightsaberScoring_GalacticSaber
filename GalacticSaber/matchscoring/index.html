@@ -166,9 +166,9 @@
   <div class="row">
     <div class="scoreColumn">
       <div class="scoreButton" style="border-color: #000000;"><h1 id="p1score" class="bigText" style="position:relative; top: 10%;">00</h1></div>
-      <button type="button" id="p15" onclick="p1Plus(5)" class="btn btn-primary scoreButton">Head or Torso</button>
-      <button type="button" id="p13" onclick="p1Plus(3)" class="btn btn-primary scoreButton">Arms or Legs</button>
-      <button type="button" id="p11" onclick="p1Plus(1)" class="btn btn-primary scoreButton">Hands or Hilt </button>
+      <button type="button" id="p15" onclick="p1Plus(5); p1headTorso++;" class="btn btn-primary scoreButton">Head or Torso</button>
+      <button type="button" id="p13" onclick="p1Plus(3); p1armsLegs++" class="btn btn-primary scoreButton">Arms or Legs</button>
+      <button type="button" id="p11" onclick="p1Plus(1); p1handsHilt++" class="btn btn-primary scoreButton">Hands or Hilt </button>
     </div>
   
     <div class="column" id="column">
@@ -474,9 +474,9 @@
     color:lavender">
       <div class="scoreButton" style="border-color: #000000;"><h1 id="p2score" class="bigText" style="position:relative; top: 10%;">00</h1></div>
 
-      <button type="button" id="p25" onclick="p2Plus(5)" class="btn btn-primary scoreButton">Head or Torso</button>
-      <button type="button" id="p23" onclick="p2Plus(3)" class="btn btn-primary scoreButton">Arms or Legs</button>
-      <button type="button" id="p21" onclick="p2Plus(1)" class="btn btn-primary scoreButton">Hands or Hilt </button>
+      <button type="button" id="p25" onclick="p2Plus(5); p2headTorso++;" class="btn btn-primary scoreButton">Head or Torso</button>
+      <button type="button" id="p23" onclick="p2Plus(3); p2armsLegs++;" class="btn btn-primary scoreButton">Arms or Legs</button>
+      <button type="button" id="p21" onclick="p2Plus(1); p2handsHilt++;" class="btn btn-primary scoreButton">Hands or Hilt </button>
     </div>
     
   </div>
@@ -493,7 +493,15 @@
       var seconds =0;
       // Start of ScoreKeeping Code
       var playerOneScore=00;
-    var playerTwoScore=00;
+      var playerTwoScore=00;
+
+      var p1handsHilt=0;
+      var p1armsLegs=0;
+      var p1headTorso=0;
+      var p2handsHilt=0;
+      var p2armsLegs=0;
+      var p2headTorso=0;
+
     function p1Plus(amount) {
       playerOneScore+= amount;
       // if/else here helps to always keep the display two digits,
@@ -724,6 +732,12 @@
 
     btn[4].onclick = function() { // Summary Page
         modal[4].style.display = "block";
+        document.getElementById("p1handsHilt").innerHTML = p1handsHilt;
+        document.getElementById("p1armsLegs").innerHTML = p1armsLegs;
+        document.getElementById("p1headTorso").innerHTML = p1headTorso;
+        document.getElementById("p2handsHilt").innerHTML = p2handsHilt;
+        document.getElementById("p2armsLegs").innerHTML = p2armsLegs;
+        document.getElementById("p2headTorso").innerHTML = p2headTorso;
     }
 
     btn[5].onclick = function() { // 2White
