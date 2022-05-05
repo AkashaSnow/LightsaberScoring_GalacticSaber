@@ -327,8 +327,8 @@
           <div id="middleSummaryColumn" style="float: left; background-color: #212c68; width: 30%;">
             <h4 style="font-family: Comic Sans MS;">Time Elapsed</h4>
             
-            <span><h3 id="mins" style="font-family: Comic Sans MS; color:white; display:inline-block;">3:</h3></span>
-            <span><h3 id="seconds" style="font-family: Comic Sans MS; color:white; display:inline-block;">00</h3></span>
+            <span><h3 id="summaryMins" style="font-family: Comic Sans MS; color:white; display:inline-block;">3:</h3></span>
+            <span><h3 id="summarySeconds" style="font-family: Comic Sans MS; color:white; display:inline-block;">00</h3></span>
 
             <img src="static/matchscoring/images/GSEmblem.png" alt="gsEmblem" id="gsEmblem" style="position: relative; top:5%; border-style: solid; border-color: white; width: 25vw; height: 40vh;">
 
@@ -738,6 +738,21 @@
         document.getElementById("p2handsHilt").innerHTML = p2handsHilt;
         document.getElementById("p2armsLegs").innerHTML = p2armsLegs;
         document.getElementById("p2headTorso").innerHTML = p2headTorso;
+
+        document.getElementById("p1summaryScore").innerHTML= playerOneScore;
+        document.getElementById("p2summaryScore").innerHTML= playerTwoScore;
+
+        document.getElementById("p1summaryWhite").innerHTML= p1white;
+        document.getElementById("p1summaryYellow").innerHTML= p1yellow;
+        document.getElementById("p1summaryRed").innerHTML= p1red;
+        document.getElementById("p1summaryBlack").innerHTML= p1black;
+
+        document.getElementById("p2summaryWhite").innerHTML= p2white;
+        document.getElementById("p2summaryYellow").innerHTML= p2yellow;
+        document.getElementById("p2summaryRed").innerHTML= p2red;
+        document.getElementById("p2summaryBlack").innerHTML= p2black;
+
+
     }
 
     btn[5].onclick = function() { // 2White
